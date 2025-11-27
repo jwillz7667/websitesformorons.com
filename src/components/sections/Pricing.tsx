@@ -28,8 +28,8 @@ export function Pricing() {
   return (
     <section ref={ref} className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-neutral-950">
-        <div className="absolute inset-0 mesh-gradient" />
+      <div className="absolute inset-0 dark:bg-neutral-950 bg-white">
+        <div className="absolute inset-0 mesh-gradient dark:opacity-100 opacity-50" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,7 +50,7 @@ export function Pricing() {
           <span
             className={cn(
               'text-sm font-medium transition-colors',
-              !isYearly ? 'text-white' : 'text-white/50'
+              !isYearly ? 'dark:text-white text-neutral-900' : 'dark:text-white/50 text-neutral-500'
             )}
           >
             One-time
@@ -60,7 +60,7 @@ export function Pricing() {
             onClick={() => setIsYearly(!isYearly)}
             className={cn(
               'relative w-16 h-8 rounded-full transition-colors duration-300',
-              isYearly ? 'bg-cyan-500' : 'bg-white/20'
+              isYearly ? 'bg-cyan-500' : 'dark:bg-white/20 bg-neutral-200'
             )}
             aria-label="Toggle yearly billing"
           >
@@ -74,7 +74,7 @@ export function Pricing() {
           <span
             className={cn(
               'text-sm font-medium transition-colors flex items-center gap-2',
-              isYearly ? 'text-white' : 'text-white/50'
+              isYearly ? 'dark:text-white text-neutral-900' : 'dark:text-white/50 text-neutral-500'
             )}
           >
             Yearly
@@ -119,18 +119,18 @@ export function Pricing() {
                 {/* Header */}
                 <div
                   className={cn(
-                    'p-8 border-b border-white/10',
+                    'p-8 border-b dark:border-white/10 border-neutral-200',
                     plan.popular && 'bg-gradient-to-r from-cyan-500/10 to-orange-500/10'
                   )}
                 >
-                  <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-                  <p className="text-white/60 text-sm mb-6">{plan.description}</p>
+                  <h3 className="text-xl font-bold dark:text-white text-neutral-900 mb-2">{plan.name}</h3>
+                  <p className="dark:text-white/60 text-neutral-600 text-sm mb-6">{plan.description}</p>
 
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold text-white">
+                    <span className="text-4xl font-bold dark:text-white text-neutral-900">
                       {formatCurrency(isYearly ? plan.yearlyPrice : plan.monthlyPrice)}
                     </span>
-                    <span className="text-white/50 text-sm">
+                    <span className="dark:text-white/50 text-neutral-500 text-sm">
                       {isYearly ? '/project' : '/project'}
                     </span>
                   </div>
@@ -150,13 +150,13 @@ export function Pricing() {
                         key={featureIndex}
                         className={cn(
                           'flex items-start gap-3 text-sm',
-                          feature.included ? 'text-white/70' : 'text-white/30'
+                          feature.included ? 'dark:text-white/70 text-neutral-700' : 'dark:text-white/30 text-neutral-300'
                         )}
                       >
                         {feature.included ? (
                           <Check className="w-5 h-5 text-cyan-500 shrink-0" />
                         ) : (
-                          <X className="w-5 h-5 text-white/20 shrink-0" />
+                          <X className="w-5 h-5 dark:text-white/20 text-neutral-300 shrink-0" />
                         )}
                         {feature.text}
                       </li>
@@ -185,7 +185,7 @@ export function Pricing() {
           initial={{ opacity: 0 }}
           animate={isIntersecting ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="text-center text-white/40 text-sm mt-12"
+          className="text-center dark:text-white/40 text-neutral-500 text-sm mt-12"
         >
           Need a custom solution?{' '}
           <Link href="/contact" className="text-cyan-400 hover:text-cyan-300 underline">

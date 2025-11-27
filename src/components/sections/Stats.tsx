@@ -14,7 +14,7 @@ export function Stats() {
   return (
     <section ref={ref} className="relative py-24 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-900/50 to-neutral-950" />
+      <div className="absolute inset-0 dark:bg-gradient-to-b dark:from-neutral-950 dark:via-neutral-900/50 dark:to-neutral-950 bg-white" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
@@ -28,13 +28,13 @@ export function Stats() {
             >
               {/* Icon */}
               {stat.icon && (
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-orange-500/10 border border-white/5 mb-4 group-hover:border-cyan-500/30 transition-colors duration-300">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-orange-500/10 border dark:border-white/5 border-neutral-200 mb-4 group-hover:border-cyan-500/30 transition-colors duration-300">
                   <stat.icon className="w-6 h-6 text-cyan-400" />
                 </div>
               )}
 
               {/* Value */}
-              <div className="text-3xl sm:text-4xl font-bold text-white mb-2">
+              <div className="text-3xl sm:text-4xl font-bold dark:text-white text-neutral-900 mb-2">
                 {stat.prefix}
                 <AnimatedCounter
                   end={stat.value}
@@ -46,13 +46,13 @@ export function Stats() {
               </div>
 
               {/* Label */}
-              <div className="text-sm font-medium text-white/60 mb-1">
+              <div className="text-sm font-medium dark:text-white/60 text-neutral-600 mb-1">
                 {stat.label}
               </div>
 
               {/* Description */}
               {stat.description && (
-                <div className="text-xs text-white/40 hidden sm:block">
+                <div className="text-xs dark:text-white/40 text-neutral-500 hidden sm:block">
                   {stat.description}
                 </div>
               )}

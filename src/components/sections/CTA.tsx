@@ -36,7 +36,7 @@ export function CTA() {
     <section ref={ref} className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-neutral-950 to-orange-500/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 dark:via-neutral-950 via-white to-orange-500/10" />
         <div className="absolute inset-0 mesh-gradient opacity-50" />
 
         {/* Animated background elements */}
@@ -73,10 +73,10 @@ export function CTA() {
             initial={{ opacity: 0, y: 20 }}
             animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-gradient-to-r from-cyan-500/10 to-orange-500/10 border border-white/10"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-gradient-to-r from-cyan-500/10 to-orange-500/10 border dark:border-white/10 border-neutral-200"
           >
             <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm font-medium text-white/80">
+            <span className="text-sm font-medium dark:text-white/80 text-neutral-700">
               Limited Time: Free Website Audit
             </span>
           </motion.div>
@@ -86,7 +86,7 @@ export function CTA() {
             initial={{ opacity: 0, y: 20 }}
             animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-display-md sm:text-display-lg lg:text-display-xl font-bold text-white mb-6"
+            className="text-display-md sm:text-display-lg lg:text-display-xl font-bold dark:text-white text-neutral-900 mb-6"
           >
             Ready to <GradientText>Transform</GradientText> Your Website?
           </motion.h2>
@@ -96,7 +96,7 @@ export function CTA() {
             initial={{ opacity: 0, y: 20 }}
             animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg sm:text-xl text-white/60 mb-10 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl dark:text-white/60 text-neutral-600 mb-10 max-w-2xl mx-auto"
           >
             Get a free website audit and discover exactly what&apos;s holding your site back.
             No commitment, no sales pitch - just actionable insights.
@@ -147,7 +147,7 @@ export function CTA() {
             {benefits.map((benefit) => (
               <div
                 key={benefit}
-                className="flex items-center gap-2 text-sm text-white/50"
+                className="flex items-center gap-2 text-sm dark:text-white/50 text-neutral-500"
               >
                 <CheckCircle2 className="w-4 h-4 text-cyan-500" />
                 {benefit}
@@ -160,9 +160,9 @@ export function CTA() {
             initial={{ opacity: 0 }}
             animate={isIntersecting ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-12 pt-8 border-t border-white/5"
+            className="mt-12 pt-8 border-t dark:border-white/5 border-neutral-200"
           >
-            <p className="text-white/40 mb-4">
+            <p className="dark:text-white/40 text-neutral-500 mb-4">
               Prefer to talk to a human?
             </p>
             <Button variant="ghost" size="lg" asChild>
