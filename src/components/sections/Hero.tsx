@@ -7,16 +7,14 @@ import { ArrowRight, Play, Star, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { GradientText } from '@/components/ui/GradientText';
-import { useMousePosition } from '@/hooks/useMousePosition';
-import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
+import { usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import { quickStats } from '@/data/stats';
+import { CompareSlider } from '@/components/ui/CompareSlider';
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isDesktop = useIsDesktop();
   const prefersReducedMotion = usePrefersReducedMotion();
-  const mousePosition = useMousePosition();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -24,11 +22,7 @@ export function Hero() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
-  // Calculate gradient orb position based on mouse
-  const orbX = isDesktop && !prefersReducedMotion ? mousePosition.normalizedX * 100 : 50;
-  const orbY = isDesktop && !prefersReducedMotion ? mousePosition.normalizedY * 100 : 50;
+  const opacity = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
 
   return (
     <section
@@ -36,25 +30,25 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-neutral-950">
+      <div className="absolute inset-0 dark:bg-neutral-950 bg-white">
         {/* Grid pattern */}
-        <div className="absolute inset-0 grid-pattern opacity-30" />
+        <div className="absolute inset-0 grid-pattern dark:opacity-30 opacity-10" />
 
         {/* Gradient orbs */}
         <div
-          className="absolute w-[800px] h-[800px] rounded-full blur-[120px] opacity-20 transition-all duration-1000 ease-out"
+          className="absolute w-[800px] h-[800px] rounded-full blur-[120px] dark:opacity-20 opacity-10 transition-all duration-1000 ease-out"
           style={{
             background: 'radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, transparent 70%)',
-            left: `${orbX - 20}%`,
-            top: `${orbY - 20}%`,
+            left: '30%',
+            top: '30%',
           }}
         />
         <div
           className="absolute w-[600px] h-[600px] rounded-full blur-[100px] opacity-15 transition-all duration-1000 ease-out delay-100"
           style={{
             background: 'radial-gradient(circle, rgba(249, 115, 22, 0.4) 0%, transparent 70%)',
-            right: `${100 - orbX - 20}%`,
-            bottom: `${100 - orbY - 20}%`,
+            right: '30%',
+            bottom: '30%',
           }}
         />
 
@@ -88,7 +82,7 @@ export function Hero() {
             </motion.div>
 
             {/* Headline */}
-            <h1 className="text-display-lg sm:text-display-xl lg:text-display-2xl font-bold text-white mb-6">
+            <h1 className="text-display-lg sm:text-display-xl lg:text-display-2xl font-bold dark:text-white text-neutral-900 mb-6">
               Your Website{' '}
               <span className="relative">
                 <span className="relative z-10">Sucks</span>
@@ -104,11 +98,11 @@ export function Hero() {
             </h1>
 
             {/* Description */}
-            <p className="text-lg sm:text-xl text-white/60 mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="text-lg sm:text-xl dark:text-white/60 text-neutral-600 mb-8 max-w-xl mx-auto lg:mx-0">
               Transform your embarrassing legacy website into a{' '}
-              <span className="text-white">stunning, high-converting</span> digital
+              <span className="dark:text-white text-neutral-900 font-bold">stunning, high-converting</span> digital
               experience. Professional redesigns starting at{' '}
-              <span className="text-cyan-400 font-semibold">$2,499</span>.
+              <span className="text-cyan-500 font-semibold">$2,499</span>.
             </p>
 
             {/* CTA Buttons */}
@@ -132,7 +126,7 @@ export function Hero() {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-white/50">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm dark:text-white/50 text-neutral-500">
               {[
                 'No Contracts',
                 '14-Day Delivery',
@@ -148,37 +142,31 @@ export function Hero() {
 
           {/* Browser Mockup */}
           <motion.div
-            initial={{ opacity: 0, y: 40, rotateY: -10 }}
-            animate={{ opacity: 1, y: 0, rotateY: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative perspective-2000"
+            className="relative"
           >
             <div
               className={cn(
                 'relative transform-gpu',
                 !prefersReducedMotion && 'hover:scale-[1.02] transition-transform duration-500'
               )}
-              style={{
-                transform: isDesktop && !prefersReducedMotion
-                  ? `rotateY(${(mousePosition.normalizedX - 0.5) * 10}deg) rotateX(${(mousePosition.normalizedY - 0.5) * -10}deg)`
-                  : undefined,
-                transition: 'transform 0.1s ease-out',
-              }}
             >
               {/* Glow effect behind mockup */}
               <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-transparent to-orange-500/20 rounded-3xl blur-2xl opacity-60" />
 
               {/* Before/After Browser Mockup */}
-              <div className="relative bg-neutral-900/80 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden shadow-2xl shadow-black/50">
+              <div className="relative dark:bg-neutral-900/80 bg-neutral-100/80 backdrop-blur-xl rounded-2xl border dark:border-white/10 border-neutral-200 overflow-hidden shadow-2xl dark:shadow-black/50 shadow-neutral-500/20">
                 {/* Browser chrome */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-neutral-800/80 border-b border-white/5">
+                <div className="flex items-center gap-2 px-4 py-3 dark:bg-neutral-800/80 bg-neutral-200/80 border-b dark:border-white/5 border-neutral-300">
                   <div className="flex gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-500" />
                     <div className="w-3 h-3 rounded-full bg-yellow-500" />
                     <div className="w-3 h-3 rounded-full bg-green-500" />
                   </div>
                   <div className="flex-1 mx-4">
-                    <div className="bg-neutral-700/50 rounded-lg px-4 py-1.5 text-xs text-white/40 text-center">
+                    <div className="dark:bg-neutral-700/50 bg-neutral-300/50 rounded-lg px-4 py-1.5 text-xs dark:text-white/40 text-neutral-500 text-center">
                       yourwebsite.com
                     </div>
                   </div>
@@ -186,57 +174,50 @@ export function Hero() {
 
                 {/* Content area - Before/After split */}
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  {/* Before side */}
-                  <div className="absolute inset-0 w-1/2 bg-gradient-to-br from-gray-800 to-gray-900 p-6">
-                    <div className="space-y-4">
-                      <div className="text-xs text-red-400 font-mono uppercase tracking-wider">Before</div>
-                      {/* Ugly website mockup */}
-                      <div className="bg-gray-700 h-8 w-3/4 rounded" />
-                      <div className="grid grid-cols-3 gap-2">
-                        <div className="bg-gray-600 h-16 rounded" />
-                        <div className="bg-gray-600 h-16 rounded" />
-                        <div className="bg-gray-600 h-16 rounded" />
+                  <CompareSlider
+                    before={
+                      <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 p-6">
+                        <div className="space-y-4">
+                          <div className="text-xs text-red-400 font-mono uppercase tracking-wider">Before</div>
+                          {/* Ugly website mockup */}
+                          <div className="bg-gray-700 h-8 w-3/4 rounded" />
+                          <div className="grid grid-cols-3 gap-2">
+                            <div className="bg-gray-600 h-16 rounded" />
+                            <div className="bg-gray-600 h-16 rounded" />
+                            <div className="bg-gray-600 h-16 rounded" />
+                          </div>
+                          <div className="bg-gray-700 h-4 w-full rounded" />
+                          <div className="bg-gray-700 h-4 w-5/6 rounded" />
+                          <div className="bg-gray-700 h-4 w-4/6 rounded" />
+                          {/* Warning icon */}
+                          <div className="flex items-center gap-2 text-red-400 text-xs mt-4">
+                            <span>⚠️ Outdated Design</span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="bg-gray-700 h-4 w-full rounded" />
-                      <div className="bg-gray-700 h-4 w-5/6 rounded" />
-                      <div className="bg-gray-700 h-4 w-4/6 rounded" />
-                      {/* Warning icon */}
-                      <div className="flex items-center gap-2 text-red-400 text-xs mt-4">
-                        <span>⚠️ Outdated Design</span>
+                    }
+                    after={
+                      <div className="w-full h-full bg-gradient-to-br from-neutral-900 to-neutral-950 p-6 border-l border-cyan-500/30">
+                        <div className="space-y-4">
+                          <div className="text-xs text-cyan-400 font-mono uppercase tracking-wider">After</div>
+                          {/* Modern website mockup */}
+                          <div className="bg-gradient-to-r from-cyan-500 to-cyan-400 h-8 w-2/3 rounded-lg" />
+                          <div className="grid grid-cols-3 gap-2">
+                            <div className="bg-gradient-to-br from-cyan-500/20 to-transparent h-16 rounded-lg border border-cyan-500/20" />
+                            <div className="bg-gradient-to-br from-orange-500/20 to-transparent h-16 rounded-lg border border-orange-500/20" />
+                            <div className="bg-gradient-to-br from-cyan-500/20 to-transparent h-16 rounded-lg border border-cyan-500/20" />
+                          </div>
+                          <div className="bg-white/10 h-4 w-full rounded-lg" />
+                          <div className="bg-white/10 h-4 w-5/6 rounded-lg" />
+                          <div className="bg-white/10 h-4 w-4/6 rounded-lg" />
+                          {/* Success indicator */}
+                          <div className="flex items-center gap-2 text-cyan-400 text-xs mt-4">
+                            <span>✨ Modern & Converting</span>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* After side */}
-                  <div className="absolute right-0 inset-y-0 w-1/2 bg-gradient-to-br from-neutral-900 to-neutral-950 p-6 border-l border-cyan-500/30">
-                    <div className="space-y-4">
-                      <div className="text-xs text-cyan-400 font-mono uppercase tracking-wider">After</div>
-                      {/* Modern website mockup */}
-                      <div className="bg-gradient-to-r from-cyan-500 to-cyan-400 h-8 w-2/3 rounded-lg" />
-                      <div className="grid grid-cols-3 gap-2">
-                        <div className="bg-gradient-to-br from-cyan-500/20 to-transparent h-16 rounded-lg border border-cyan-500/20" />
-                        <div className="bg-gradient-to-br from-orange-500/20 to-transparent h-16 rounded-lg border border-orange-500/20" />
-                        <div className="bg-gradient-to-br from-cyan-500/20 to-transparent h-16 rounded-lg border border-cyan-500/20" />
-                      </div>
-                      <div className="bg-white/10 h-4 w-full rounded-lg" />
-                      <div className="bg-white/10 h-4 w-5/6 rounded-lg" />
-                      <div className="bg-white/10 h-4 w-4/6 rounded-lg" />
-                      {/* Success indicator */}
-                      <div className="flex items-center gap-2 text-cyan-400 text-xs mt-4">
-                        <span>✨ Modern & Converting</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Center divider with drag handle */}
-                  <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-500 via-cyan-400 to-orange-500 -translate-x-1/2">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-neutral-900 border-2 border-cyan-500 rounded-full flex items-center justify-center shadow-glow shadow-cyan-500/50">
-                      <div className="flex gap-0.5">
-                        <div className="w-0.5 h-4 bg-cyan-400 rounded" />
-                        <div className="w-0.5 h-4 bg-cyan-400 rounded" />
-                      </div>
-                    </div>
-                  </div>
+                    }
+                  />
                 </div>
               </div>
 
@@ -253,15 +234,15 @@ export function Hero() {
               <motion.div
                 animate={!prefersReducedMotion ? { y: [0, 10, 0] } : {}}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute -bottom-4 -left-4 bg-neutral-900/90 backdrop-blur-xl rounded-2xl p-4 border border-white/10"
+                className="absolute -bottom-4 -left-4 dark:bg-neutral-900/90 bg-white/90 backdrop-blur-xl rounded-2xl p-4 border dark:border-white/10 border-neutral-200 shadow-xl"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center">
                     <Star className="w-5 h-5 text-white fill-white" />
                   </div>
                   <div>
-                    <div className="text-white font-bold">4.9/5 Rating</div>
-                    <div className="text-white/50 text-xs">2,500+ Reviews</div>
+                    <div className="dark:text-white text-neutral-900 font-bold">4.9/5 Rating</div>
+                    <div className="dark:text-white/50 text-neutral-500 text-xs">2,500+ Reviews</div>
                   </div>
                 </div>
               </motion.div>
@@ -274,7 +255,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-20 pt-10 border-t border-white/5"
+          className="mt-20 pt-10 border-t dark:border-white/5 border-neutral-200"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {quickStats.map((stat, index) => (
@@ -288,7 +269,7 @@ export function Hero() {
                 <div className="text-2xl sm:text-3xl font-bold text-gradient mb-1">
                   {stat.value}
                 </div>
-                <div className="text-sm text-white/50">{stat.label}</div>
+                <div className="text-sm dark:text-white/50 text-neutral-500">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -305,7 +286,7 @@ export function Hero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-          className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center p-2"
+          className="w-6 h-10 rounded-full border-2 dark:border-white/20 border-neutral-300 flex justify-center p-2"
         >
           <motion.div
             animate={{ height: ['20%', '60%', '20%'] }}
