@@ -79,6 +79,12 @@ export function Navigation() {
   const { isDark, toggle: toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  // Handle client-side mounting
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -205,26 +211,28 @@ export function Navigation() {
 
             {/* Theme Toggle + CTA + Mobile Menu Button */}
             <div className="flex items-center gap-2 sm:gap-4">
-              {/* Theme Toggle Button */}
-              <button
-                onClick={toggleTheme}
-                className={cn(
-                  'relative p-2 rounded-lg transition-all duration-300',
-                  'dark:text-white/70 text-neutral-600',
-                  'dark:hover:text-white hover:text-neutral-900',
-                  'dark:hover:bg-white/10 hover:bg-neutral-100'
-                )}
-                aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-              >
-                <Sun className={cn(
-                  'w-5 h-5 absolute inset-0 m-auto transition-all duration-300',
-                  isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'
-                )} />
-                <Moon className={cn(
-                  'w-5 h-5 transition-all duration-300',
-                  isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
-                )} />
-              </button>
+              {/* Theme Toggle Button - only show when mounted */}
+              {mounted && (
+                <button
+                  onClick={toggleTheme}
+                  className={cn(
+                    'relative p-2 rounded-lg transition-all duration-300',
+                    'dark:text-white/70 text-neutral-600',
+                    'dark:hover:text-white hover:text-neutral-900',
+                    'dark:hover:bg-white/10 hover:bg-neutral-100'
+                  )}
+                  aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+                >
+                  <Sun className={cn(
+                    'w-5 h-5 absolute inset-0 m-auto transition-all duration-300',
+                    isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'
+                  )} />
+                  <Moon className={cn(
+                    'w-5 h-5 transition-all duration-300',
+                    isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
+                  )} />
+                </button>
+              )}
 
               <Button
                 variant="primary"
