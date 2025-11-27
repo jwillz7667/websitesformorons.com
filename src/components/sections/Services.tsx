@@ -39,8 +39,8 @@ export function Services() {
   return (
     <section ref={ref} className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-neutral-950">
-        <div className="absolute inset-0 dot-pattern opacity-30" />
+      <div className="absolute inset-0 dark:bg-neutral-950 bg-white">
+        <div className="absolute inset-0 dot-pattern dark:opacity-30 opacity-10" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,17 +85,17 @@ export function Services() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-xl font-bold dark:text-white text-neutral-900 mb-3 group-hover:text-cyan-400 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-white/60 mb-6 flex-grow">
+                <p className="dark:text-white/60 text-neutral-600 mb-6 flex-grow">
                   {service.shortDescription || service.description}
                 </p>
 
                 {/* Features preview */}
                 <ul className="space-y-2 mb-6">
                   {service.features.slice(0, 3).map((feature, index) => (
-                    <li key={index} className="flex items-center gap-2 text-sm text-white/50">
+                    <li key={index} className="flex items-center gap-2 text-sm dark:text-white/50 text-neutral-500">
                       <div className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
                       {feature}
                     </li>
@@ -108,11 +108,11 @@ export function Services() {
                 </ul>
 
                 {/* Price & CTA */}
-                <div className="flex items-center justify-between pt-6 border-t border-white/10 mt-auto">
+                <div className="flex items-center justify-between pt-6 border-t dark:border-white/10 border-neutral-200 mt-auto">
                   <div>
-                    <div className="text-lg font-bold text-white">{service.price}</div>
+                    <div className="text-lg font-bold dark:text-white text-neutral-900">{service.price}</div>
                     {service.priceNote && (
-                      <div className="text-xs text-white/40">{service.priceNote}</div>
+                      <div className="text-xs dark:text-white/40 text-neutral-500">{service.priceNote}</div>
                     )}
                   </div>
                   <Link
@@ -135,7 +135,7 @@ export function Services() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <p className="text-white/60 mb-6">
+          <p className="dark:text-white/60 text-neutral-600 mb-6">
             Not sure which service is right for you?
           </p>
           <Button
