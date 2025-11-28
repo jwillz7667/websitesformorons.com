@@ -6,6 +6,7 @@ import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
 import { ServiceWorkerRegistration } from '@/components/pwa/ServiceWorkerRegistration';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -167,6 +168,7 @@ export default function RootLayout({
 
         <ServiceWorkerRegistration />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
