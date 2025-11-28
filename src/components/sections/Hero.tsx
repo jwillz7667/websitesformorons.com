@@ -3,14 +3,13 @@
 import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Play, CheckCircle2, Star } from 'lucide-react';
+import { ArrowRight, Play, CheckCircle2, Star, TrendingUp, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { GradientText } from '@/components/ui/GradientText';
 import { usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import { quickStats } from '@/data/stats';
-import { CompareSlider } from '@/components/ui/CompareSlider';
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -141,7 +140,7 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Browser Mockup */}
+          {/* Stats/Results Visual */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -154,71 +153,43 @@ export function Hero() {
                 !prefersReducedMotion && 'hover:scale-[1.02] transition-transform duration-500'
               )}
             >
-              {/* Glow effect behind mockup */}
+              {/* Glow effect behind */}
               <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-transparent to-orange-500/20 rounded-3xl blur-2xl opacity-60" />
 
-              {/* Before/After Browser Mockup */}
-              <div className="relative dark:bg-neutral-900/80 bg-neutral-100/80 backdrop-blur-xl rounded-2xl border dark:border-white/10 border-neutral-200 overflow-hidden shadow-2xl dark:shadow-black/50 shadow-neutral-500/20">
-                {/* Browser chrome */}
-                <div className="flex items-center gap-2 px-4 py-3 dark:bg-neutral-800/80 bg-neutral-200/80 border-b dark:border-white/5 border-neutral-300">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                    <div className="w-3 h-3 rounded-full bg-green-500" />
+              {/* Main visual card */}
+              <div className="relative dark:bg-neutral-900/80 bg-neutral-100/80 backdrop-blur-xl rounded-2xl border dark:border-white/10 border-neutral-200 overflow-hidden shadow-2xl dark:shadow-black/50 shadow-neutral-500/20 p-8">
+                {/* Results showcase */}
+                <div className="space-y-6">
+                  <div className="text-center mb-8">
+                    <div className="text-xs font-mono uppercase tracking-wider dark:text-cyan-400 text-cyan-600 mb-2">Average Client Results</div>
+                    <div className="text-4xl sm:text-5xl font-bold text-gradient">+287%</div>
+                    <div className="dark:text-white/60 text-neutral-600 text-sm mt-1">Conversion Rate Increase</div>
                   </div>
-                  <div className="flex-1 mx-4">
-                    <div className="dark:bg-neutral-700/50 bg-neutral-300/50 rounded-lg px-4 py-1.5 text-xs dark:text-white/40 text-neutral-500 text-center">
-                      yourwebsite.com
+
+                  {/* Stats grid */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="dark:bg-white/5 bg-white/80 rounded-xl p-4 border dark:border-white/10 border-neutral-200">
+                      <TrendingUp className="w-6 h-6 text-cyan-500 mb-2" />
+                      <div className="text-2xl font-bold dark:text-white text-neutral-900">340%</div>
+                      <div className="text-xs dark:text-white/50 text-neutral-500">More Traffic</div>
+                    </div>
+                    <div className="dark:bg-white/5 bg-white/80 rounded-xl p-4 border dark:border-white/10 border-neutral-200">
+                      <Zap className="w-6 h-6 text-orange-500 mb-2" />
+                      <div className="text-2xl font-bold dark:text-white text-neutral-900">2.1s</div>
+                      <div className="text-xs dark:text-white/50 text-neutral-500">Load Time</div>
                     </div>
                   </div>
-                </div>
 
-                {/* Content area - Before/After split */}
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <CompareSlider
-                    before={
-                      <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 p-6">
-                        <div className="space-y-4">
-                          <div className="text-xs text-red-400 font-mono uppercase tracking-wider">Before</div>
-                          {/* Ugly website mockup */}
-                          <div className="bg-gray-700 h-8 w-3/4 rounded" />
-                          <div className="grid grid-cols-3 gap-2">
-                            <div className="bg-gray-600 h-16 rounded" />
-                            <div className="bg-gray-600 h-16 rounded" />
-                            <div className="bg-gray-600 h-16 rounded" />
-                          </div>
-                          <div className="bg-gray-700 h-4 w-full rounded" />
-                          <div className="bg-gray-700 h-4 w-5/6 rounded" />
-                          <div className="bg-gray-700 h-4 w-4/6 rounded" />
-                          {/* Warning icon */}
-                          <div className="flex items-center gap-2 text-red-400 text-xs mt-4">
-                            <span>⚠️ Outdated Design</span>
-                          </div>
-                        </div>
-                      </div>
-                    }
-                    after={
-                      <div className="w-full h-full bg-gradient-to-br from-neutral-900 to-neutral-950 p-6 border-l border-cyan-500/30">
-                        <div className="space-y-4">
-                          <div className="text-xs text-cyan-400 font-mono uppercase tracking-wider">After</div>
-                          {/* Modern website mockup */}
-                          <div className="bg-gradient-to-r from-cyan-500 to-cyan-400 h-8 w-2/3 rounded-lg" />
-                          <div className="grid grid-cols-3 gap-2">
-                            <div className="bg-gradient-to-br from-cyan-500/20 to-transparent h-16 rounded-lg border border-cyan-500/20" />
-                            <div className="bg-gradient-to-br from-orange-500/20 to-transparent h-16 rounded-lg border border-orange-500/20" />
-                            <div className="bg-gradient-to-br from-cyan-500/20 to-transparent h-16 rounded-lg border border-cyan-500/20" />
-                          </div>
-                          <div className="bg-white/10 h-4 w-full rounded-lg" />
-                          <div className="bg-white/10 h-4 w-5/6 rounded-lg" />
-                          <div className="bg-white/10 h-4 w-4/6 rounded-lg" />
-                          {/* Success indicator */}
-                          <div className="flex items-center gap-2 text-cyan-400 text-xs mt-4">
-                            <span>✨ Modern & Converting</span>
-                          </div>
-                        </div>
-                      </div>
-                    }
-                  />
+                  {/* Testimonial snippet */}
+                  <div className="dark:bg-gradient-to-br dark:from-cyan-500/10 dark:to-orange-500/10 bg-gradient-to-br from-cyan-500/5 to-orange-500/5 rounded-xl p-4 border dark:border-white/10 border-neutral-200">
+                    <p className="text-sm dark:text-white/80 text-neutral-700 italic mb-2">
+                      "Our leads increased 4x in the first month after launch."
+                    </p>
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-cyan-500 to-orange-500" />
+                      <span className="text-xs dark:text-white/50 text-neutral-500">Sarah M., Healthcare CEO</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
