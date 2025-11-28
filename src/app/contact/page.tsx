@@ -11,6 +11,7 @@ import {
   Clock,
   MessageSquare,
   Calendar,
+  AlertCircle,
 } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -70,6 +71,7 @@ const serviceOptions = [
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -79,17 +81,46 @@ export default function ContactPage() {
     service: '',
     budget: '',
     message: '',
+    honeypot: '', // Hidden field for spam detection
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+
+      setIsSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        website: '',
+        service: '',
+        budget: '',
+        message: '',
+        honeypot: '',
+      });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -209,6 +240,30 @@ export default function ContactPage() {
             <div className="lg:col-span-3">
               <Card variant="glass" padding="lg">
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot field - hidden from users, catches bots */}
+                  <input
+                    type="text"
+                    name="honeypot"
+                    value={formData.honeypot}
+                    onChange={handleChange}
+                    className="absolute -left-[9999px] opacity-0 pointer-events-none"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+
+                  {/* Error message */}
+                  {error && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-center gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/20"
+                    >
+                      <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
+                      <p className="text-red-400 text-sm">{error}</p>
+                    </motion.div>
+                  )}
+
                   {/* Name & Email */}
                   <div className="grid sm:grid-cols-2 gap-6">
                     <Input

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Sparkles, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
@@ -18,18 +18,47 @@ const benefits = [
 
 export function CTA() {
   const [email, setEmail] = useState('');
+  const [honeypot, setHoneypot] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const [ref, { isIntersecting }] = useIntersectionObserver<HTMLDivElement>({
     threshold: 0.2,
     triggerOnce: true,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          source: 'cta',
+          honeypot,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong.');
+      }
+
+      setIsSubmitted(true);
+      setEmail('');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -108,33 +137,62 @@ export function CTA() {
             animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.3 }}
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto mb-10"
+            className="max-w-lg mx-auto mb-10"
           >
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              variant="pill"
-              inputSize="lg"
-              className="flex-1"
-              required
+            {/* Honeypot */}
+            <input
+              type="text"
+              name="honeypot"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              className="absolute -left-[9999px] opacity-0 pointer-events-none"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
             />
-            <Button
-              type="submit"
-              variant="primary"
-              size="lg"
-              rightIcon={
-                isSubmitted ? (
-                  <CheckCircle2 className="w-5 h-5" />
-                ) : (
-                  <ArrowRight className="w-5 h-5" />
-                )
-              }
-              className="whitespace-nowrap"
-            >
-              {isSubmitted ? 'Sent!' : 'Get Free Audit'}
-            </Button>
+
+            {/* Error message */}
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-center justify-center gap-2 mb-4 text-red-400 text-sm"
+              >
+                <AlertCircle className="w-4 h-4" />
+                {error}
+              </motion.div>
+            )}
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                variant="pill"
+                inputSize="lg"
+                className="flex-1"
+                required
+                disabled={isSubmitting || isSubmitted}
+              />
+              <Button
+                type="submit"
+                variant="primary"
+                size="lg"
+                isLoading={isSubmitting}
+                rightIcon={
+                  isSubmitted ? (
+                    <CheckCircle2 className="w-5 h-5" />
+                  ) : (
+                    <ArrowRight className="w-5 h-5" />
+                  )
+                }
+                className="whitespace-nowrap"
+                disabled={isSubmitted}
+              >
+                {isSubmitted ? 'Check Your Inbox!' : 'Get Free Audit'}
+              </Button>
+            </div>
           </motion.form>
 
           {/* Benefits */}
