@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Is your website silently driving customers to your competitors? Here are the telltale signs it\'s time for a professional refresh.',
     category: 'Web Design',
     tags: ['web design', 'redesign', 'user experience', 'conversion optimization'],
-    date: '2024-01-15',
+    date: '2025-11-20',
     readTime: '8 min read',
     author: {
       name: 'Justin Williams',
@@ -172,11 +172,11 @@ Ready to transform your website from a liability into your best salesperson? [Ge
   // ============================================================================
   {
     slug: 'seo-basics-small-business',
-    title: 'SEO Basics Every Small Business Owner Should Know in 2024',
+    title: 'SEO Basics Every Small Business Owner Should Know in 2025',
     excerpt: 'Stop leaving money on the table. Learn the fundamentals of search engine optimization that actually move the needle for small businesses.',
     category: 'SEO',
     tags: ['seo', 'search engine optimization', 'local seo', 'google ranking', 'small business'],
-    date: '2024-01-10',
+    date: '2025-11-15',
     readTime: '12 min read',
     author: {
       name: 'Sarah Miller',
@@ -412,7 +412,7 @@ Remember: SEO is a marathon, not a sprint. Expect to see meaningful results in 3
     excerpt: 'Every second your website takes to load costs you customers. Discover the real impact of page speed on your business and actionable fixes.',
     category: 'Performance',
     tags: ['page speed', 'performance', 'core web vitals', 'conversion optimization', 'user experience'],
-    date: '2024-01-05',
+    date: '2025-11-10',
     readTime: '10 min read',
     author: {
       name: 'Mike Johnson',
@@ -623,11 +623,11 @@ Your customers are impatient. Your competitors are getting faster. The question 
   // ============================================================================
   {
     slug: 'mobile-first-design',
-    title: 'Mobile-First Design: Why It\'s No Longer Optional in 2024',
+    title: 'Mobile-First Design: Why It\'s No Longer Optional in 2025',
     excerpt: 'Over 60% of web traffic is mobile. Is your website designed for the screens where your customers actually are?',
     category: 'Web Design',
     tags: ['mobile design', 'responsive design', 'mobile-first', 'user experience', 'web development'],
-    date: '2023-12-28',
+    date: '2025-11-05',
     readTime: '9 min read',
     author: {
       name: 'Emily Davis',
@@ -861,7 +861,7 @@ Your customers are holding the answer in their hands, literally. The question is
     excerpt: 'Small tweaks, big results. Learn the psychology of high-converting websites and changes you can implement today.',
     category: 'Marketing',
     tags: ['conversion optimization', 'CRO', 'landing pages', 'user experience', 'psychology'],
-    date: '2023-12-20',
+    date: '2025-10-28',
     readTime: '11 min read',
     author: {
       name: 'Justin Williams',
@@ -1121,11 +1121,11 @@ Conversion optimization isn't a project—it's an ongoing process of learning wh
   // ============================================================================
   {
     slug: 'wordpress-vs-shopify',
-    title: 'WordPress vs Shopify in 2024: Which Platform Is Right for Your Business?',
+    title: 'WordPress vs Shopify in 2025: Which Platform Is Right for Your Business?',
     excerpt: 'The ultimate comparison guide to help you choose the right platform for your website or online store.',
     category: 'Technology',
     tags: ['wordpress', 'shopify', 'cms', 'e-commerce', 'platform comparison'],
-    date: '2023-12-15',
+    date: '2025-10-20',
     readTime: '13 min read',
     author: {
       name: 'Mike Johnson',
@@ -1471,6 +1471,1083 @@ The flexibility and ownership benefits compound over time.
 ---
 
 *Still unsure which platform is right for your business? [Schedule a free consultation](/contact) and we'll help you evaluate your specific requirements.*
+    `,
+  },
+
+  // ============================================================================
+  // Post 7: How Much Does a Website Cost (HIGH INTENT KEYWORD)
+  // ============================================================================
+  {
+    slug: 'how-much-does-a-website-cost',
+    title: 'How Much Does a Website Cost in 2025? Complete Pricing Guide',
+    excerpt: 'Get real answers about website costs. From DIY options to custom development, we break down exactly what you should expect to pay.',
+    category: 'Pricing',
+    tags: ['website cost', 'web design pricing', 'website budget', 'small business website'],
+    date: '2025-11-25',
+    readTime: '15 min read',
+    author: {
+      name: 'Justin Williams',
+      role: 'Founder & CEO',
+    },
+    metaDescription: 'Discover how much a website costs in 2025. Complete pricing breakdown for small business websites, e-commerce, and custom web development. Get accurate budget expectations.',
+    content: `
+## The Real Cost of a Website in 2025
+
+"How much does a website cost?" is the #1 question we get asked. And honestly, it's like asking "how much does a car cost?" The answer depends entirely on what you need.
+
+But unlike car dealerships, we believe in transparency. This guide will give you real numbers based on 20+ years of building websites for businesses of all sizes.
+
+## Quick Answer: Website Cost Ranges
+
+| Website Type | DIY/Template | Professional | Premium/Custom |
+|--------------|--------------|--------------|----------------|
+| Basic Business Site | $0-500 | $2,500-5,000 | $5,000-15,000 |
+| Small E-commerce | $29-300/mo | $5,000-10,000 | $10,000-30,000 |
+| Large E-commerce | $300+/mo | $15,000-50,000 | $50,000-150,000+ |
+| Custom Web Application | N/A | $25,000-75,000 | $75,000-500,000+ |
+
+Now let's break down what you actually get at each level.
+
+## Option 1: DIY Website Builders ($0-500)
+
+**Platforms:** Wix, Squarespace, Weebly, WordPress.com
+
+**What You Get:**
+- Template-based design
+- Drag-and-drop editor
+- Basic hosting included
+- Limited customization
+- Your time (10-50+ hours)
+
+**True Costs:**
+- Platform subscription: $12-40/month
+- Domain name: $12-15/year
+- Premium template: $0-200
+- Stock photos: $0-100
+- **Year 1 Total: $150-600**
+
+**Best For:**
+- Hobby sites or personal blogs
+- Testing a business idea
+- Very tight budgets
+- Tech-comfortable individuals
+
+**The Catch:**
+You're trading money for time—lots of it. Most business owners underestimate how long DIY takes and overestimate how professional the result will look.
+
+## Option 2: Professional Website Design ($2,500-15,000)
+
+This is where most small businesses should be looking. You're hiring professionals to create something that actually represents your business well.
+
+### Basic Professional Site: $2,500-5,000
+
+**What You Get:**
+- Custom design (from template or semi-custom)
+- 5-10 pages
+- Mobile responsive
+- Basic SEO setup
+- Contact form
+- Google Analytics integration
+- 1-2 rounds of revisions
+
+**Timeline:** 2-4 weeks
+
+**Best For:**
+- Service businesses
+- Local businesses
+- Startups with modest budgets
+- Businesses needing a professional presence fast
+
+### Mid-Range Professional: $5,000-10,000
+
+**What You Get:**
+- Fully custom design
+- 10-20 pages
+- Advanced SEO optimization
+- Content strategy/copywriting assistance
+- Blog setup
+- Lead capture integrations
+- Social media integration
+- 3+ rounds of revisions
+- Some ongoing support
+
+**Timeline:** 4-8 weeks
+
+**Best For:**
+- Growing businesses
+- Competitive industries
+- Businesses where website is primary lead source
+- Companies ready to invest in digital presence
+
+### Premium Professional: $10,000-15,000
+
+**What You Get:**
+- Everything above, plus:
+- Custom functionality
+- Advanced integrations (CRM, booking systems)
+- Conversion optimization
+- A/B testing setup
+- Comprehensive SEO strategy
+- Professional copywriting
+- Photography direction
+- Extended support/maintenance
+
+**Timeline:** 6-12 weeks
+
+**Best For:**
+- Established businesses scaling up
+- Highly competitive markets
+- Businesses with complex requirements
+- Companies where website drives significant revenue
+
+## Option 3: E-commerce Websites ($5,000-150,000+)
+
+E-commerce adds complexity: product management, inventory, payments, shipping, taxes. The cost scales with your catalog size and requirements.
+
+### Small E-commerce: $5,000-15,000
+
+**What You Get:**
+- Platform setup (Shopify, WooCommerce)
+- Custom theme/design
+- Up to 50 products configured
+- Payment gateway setup
+- Basic shipping configuration
+- Mobile responsive
+- Basic SEO
+
+**Best For:**
+- Businesses with small product catalogs
+- Testing e-commerce viability
+- Straightforward shipping needs
+
+### Medium E-commerce: $15,000-50,000
+
+**What You Get:**
+- Custom design and UX
+- 50-500 products
+- Advanced filtering and search
+- Multiple payment options
+- Complex shipping rules
+- Inventory management integration
+- Email marketing integration
+- Abandoned cart recovery
+- Customer accounts
+
+**Best For:**
+- Serious e-commerce businesses
+- Multi-category stores
+- Businesses with complex shipping
+- Growing online retailers
+
+### Enterprise E-commerce: $50,000-150,000+
+
+**What You Get:**
+- Fully custom solution
+- Unlimited scalability
+- ERP/warehouse integration
+- Multi-location inventory
+- B2B and B2C capabilities
+- Custom checkout flows
+- Advanced personalization
+- International/multi-currency
+- Dedicated support team
+
+**Best For:**
+- High-volume retailers
+- Complex business requirements
+- Multi-channel commerce
+- Businesses processing $1M+/year online
+
+## Ongoing Costs (Don't Forget These!)
+
+The initial build is just the beginning. Budget for:
+
+**Hosting:** $10-200/month
+- Basic shared hosting: $10-30/month
+- Managed WordPress: $25-100/month
+- E-commerce/high-traffic: $50-200+/month
+
+**Domain:** $12-50/year
+
+**SSL Certificate:** Usually free with hosting now
+
+**Maintenance & Updates:** $50-500/month
+- Security updates
+- Plugin/theme updates
+- Backups
+- Bug fixes
+- Small content changes
+
+**Content Updates:** Variable
+- Blog posts: $100-500 each
+- Page updates: $50-200
+- New pages: $200-1,000
+
+## What Affects Website Cost?
+
+### Design Complexity
+- Template modification: Lower cost
+- Semi-custom design: Medium cost
+- Fully custom design: Higher cost
+- Design system/multiple templates: Highest cost
+
+### Functionality Requirements
+- Standard features: Included in base
+- Contact forms, galleries: Usually included
+- Booking systems: +$500-2,000
+- Member areas: +$1,000-5,000
+- Custom calculators/tools: +$2,000-10,000
+- API integrations: +$1,000-5,000 each
+
+### Content Needs
+- You provide all content: No additional cost
+- Copywriting assistance: +$500-3,000
+- Professional photography: +$500-5,000
+- Video production: +$2,000-20,000
+
+### SEO & Marketing
+- Basic SEO setup: Usually included
+- Comprehensive SEO strategy: +$1,000-5,000
+- Ongoing SEO services: $500-5,000/month
+
+## Red Flags: When Pricing Is Too Low
+
+Be wary of quotes significantly below market rate. You might be getting:
+
+- **Offshore template mills:** Cookie-cutter sites that look like thousands of others
+- **Inexperienced freelancers:** Learning on your dime
+- **Bait-and-switch:** Low initial quote, endless "additional" charges
+- **No ongoing support:** You're on your own after launch
+- **Poor SEO:** Beautiful site no one finds
+
+The cheapest option is rarely the best value.
+
+## Red Flags: When Pricing Is Too High
+
+On the flip side, watch out for:
+
+- **Agency overhead:** Paying for fancy offices and account managers
+- **Feature bloat:** Selling features you don't need
+- **Proprietary lock-in:** Can't move your site elsewhere
+- **Unclear deliverables:** Vague scope that expands
+- **No portfolio proof:** Prices don't match demonstrated quality
+
+## How to Get the Best Value
+
+1. **Know your requirements** before getting quotes
+2. **Get 3-5 quotes** and compare apples to apples
+3. **Check portfolios** for relevant experience
+4. **Ask about ongoing costs** upfront
+5. **Clarify ownership** of design files and code
+6. **Get a detailed proposal** with clear deliverables
+7. **Check references** from similar businesses
+
+## Our Transparent Pricing
+
+At WebsitesForMorons.com, we believe in clear, upfront pricing:
+
+- **Professional Redesign:** Starting at $2,499
+- **E-commerce Setup:** Starting at $4,999
+- **Custom Development:** Starting at $7,499
+
+Every project includes:
+- Mobile-responsive design
+- SEO foundation
+- Speed optimization
+- 30 days of post-launch support
+- No hidden fees
+
+[Get a free quote](/contact) with exact pricing for your specific needs.
+
+## Bottom Line
+
+**For most small businesses**, expect to invest $3,000-10,000 for a professional website that will serve you well for 3-5 years. That's $50-170/month amortized—likely less than most of your other marketing expenses, with better ROI.
+
+**Don't cheap out** on your website. It's your 24/7 salesperson, your first impression, and often your primary lead generator. The difference between a $500 DIY site and a $5,000 professional site can mean thousands in lost business.
+
+---
+
+*Ready for a quote? [Contact us](/contact) for transparent pricing on your specific project. No pressure, no obligations.*
+    `,
+  },
+
+  // ============================================================================
+  // Post 8: Best Web Design Company / How to Choose (HIGH INTENT)
+  // ============================================================================
+  {
+    slug: 'how-to-choose-web-design-company',
+    title: 'How to Choose a Web Design Company: 15 Questions to Ask',
+    excerpt: 'Don\'t hire a web designer until you read this. Learn the critical questions that separate great agencies from disasters.',
+    category: 'Web Design',
+    tags: ['web design company', 'hire web designer', 'web design agency', 'choosing web designer'],
+    date: '2025-11-22',
+    readTime: '12 min read',
+    author: {
+      name: 'Justin Williams',
+      role: 'Founder & CEO',
+    },
+    metaDescription: 'Learn how to choose the right web design company for your business. 15 essential questions to ask before hiring, plus red flags to watch for.',
+    content: `
+## Why Choosing the Right Web Design Company Matters
+
+Your website is often the first interaction potential customers have with your business. A great web design partner will create a site that generates leads and builds trust. A poor choice will waste your money and potentially damage your brand.
+
+After 20 years in this industry, I've seen it all—the good, the bad, and the "they took my money and disappeared." Here's how to find the right partner.
+
+## 15 Essential Questions to Ask
+
+### 1. "Can I See Your Portfolio?"
+
+**Why It Matters:** Past work is the best predictor of future results.
+
+**What to Look For:**
+- Sites similar to what you want
+- Variety showing range
+- Modern, current designs
+- Sites that actually work well (test them!)
+
+**Red Flag:** Limited portfolio, only showing designs (not live sites), or sites that look dated.
+
+### 2. "Can I Speak With Recent Clients?"
+
+**Why It Matters:** References reveal the real experience.
+
+**Questions for References:**
+- Did they deliver on time and budget?
+- How was communication?
+- Were there surprises or hidden costs?
+- Would you hire them again?
+- How's the site performing?
+
+**Red Flag:** Reluctance to provide references or only offering testimonials from years ago.
+
+### 3. "What's Your Design Process?"
+
+**Why It Matters:** A clear process means fewer surprises.
+
+**Good Answer Includes:**
+- Discovery/strategy phase
+- Wireframing before design
+- Design review milestones
+- Development process
+- Testing before launch
+- Defined revision rounds
+
+**Red Flag:** Vague answers like "we'll figure it out as we go" or jumping straight to design.
+
+### 4. "Who Will Actually Work on My Project?"
+
+**Why It Matters:** You're hiring people, not just a company.
+
+**What to Ask:**
+- Will I meet my designer/developer?
+- Is work done in-house or outsourced?
+- Who's my point of contact?
+- What's their experience level?
+
+**Red Flag:** Evasiveness about team, offshore outsourcing without disclosure, or revolving contacts.
+
+### 5. "What's Included in the Price?"
+
+**Why It Matters:** Avoid surprise costs.
+
+**Get Clarity On:**
+- Number of pages
+- Revision rounds included
+- Stock photography
+- Copywriting/content
+- SEO setup
+- Mobile responsiveness
+- Hosting setup
+- Post-launch support
+- Training on how to update
+
+**Red Flag:** Vague pricing, lots of "that's extra" responses, or no written proposal.
+
+### 6. "What CMS Will You Use and Why?"
+
+**Why It Matters:** Affects what you can do after launch.
+
+**Good Answers:**
+- WordPress (versatile, widely supported)
+- Shopify (for e-commerce)
+- Webflow (modern, no plugins)
+- Custom solution (with clear reasoning)
+
+**Red Flag:** Proprietary systems that lock you in, or "you don't need to worry about that."
+
+### 7. "Will I Own My Website?"
+
+**Why It Matters:** Avoid being held hostage.
+
+**Confirm in Writing:**
+- You own the design files
+- You own the code
+- You can move to another host
+- You can hire someone else to maintain it
+
+**Red Flag:** Monthly "licensing" fees for your own site, or inability to get your files.
+
+### 8. "How Do You Handle SEO?"
+
+**Why It Matters:** A beautiful site no one finds is useless.
+
+**Good Answer Includes:**
+- Technical SEO foundation
+- Meta tags and structure
+- Speed optimization
+- Mobile-first approach
+- Schema markup
+- XML sitemap
+
+**Red Flag:** "SEO is a separate service" with no foundation included, or vague promises.
+
+### 9. "What Happens If I Need Changes After Launch?"
+
+**Why It Matters:** Websites need ongoing updates.
+
+**Get Clarity On:**
+- Post-launch support period
+- Cost of changes
+- Response time expectations
+- Maintenance packages available
+- Emergency support process
+
+**Red Flag:** "Our job ends at launch" or expensive hourly rates for small changes.
+
+### 10. "What's Your Timeline?"
+
+**Why It Matters:** Align expectations.
+
+**Reasonable Timelines:**
+- Small business site: 4-8 weeks
+- E-commerce: 8-12 weeks
+- Custom applications: 12-20+ weeks
+
+**Red Flag:** "We can do it in a week" (quality concerns) or no defined timeline.
+
+### 11. "How Will We Communicate?"
+
+**Why It Matters:** Communication issues kill projects.
+
+**Good Answers:**
+- Dedicated project manager
+- Regular status updates
+- Clear review/feedback process
+- Accessible via email/phone
+- Project management tool access
+
+**Red Flag:** Hard to reach during sales process, delayed responses, or only email.
+
+### 12. "What If I'm Not Happy With the Design?"
+
+**Why It Matters:** Understand the revision process.
+
+**What to Confirm:**
+- Number of revision rounds
+- What counts as a "revision"
+- Process for major direction changes
+- Kill fee if project is cancelled
+
+**Red Flag:** "We'll keep going until you're happy" (unsustainable) or no revision policy.
+
+### 13. "How Will My Site Perform on Mobile?"
+
+**Why It Matters:** 60%+ of traffic is mobile.
+
+**Good Answer Includes:**
+- Mobile-first approach
+- Responsive design
+- Mobile speed optimization
+- Touch-friendly interfaces
+- Mobile testing process
+
+**Red Flag:** "It will resize automatically" or mobile as an afterthought.
+
+### 14. "Can You Show Me Sites You've Built Still Running Successfully?"
+
+**Why It Matters:** Launch is just the beginning.
+
+**What to Check:**
+- Are past client sites still online?
+- Do they still look good?
+- Are they fast?
+- Are they maintained?
+
+**Red Flag:** Sites that are down, broken, or obviously neglected.
+
+### 15. "What Makes You Different?"
+
+**Why It Matters:** Understand their value proposition.
+
+**Look For:**
+- Specific expertise in your industry
+- Clear methodology
+- Genuine differentiation
+- Honest assessment of fit
+
+**Red Flag:** Generic answers or "we're the best" without substance.
+
+## Red Flags Summary
+
+Walk away if you see:
+
+- **No portfolio or poor quality work**
+- **Unwilling to provide references**
+- **Vague or missing contracts**
+- **Proprietary platform lock-in**
+- **Unrealistic timelines or prices**
+- **Poor communication during sales**
+- **Pushy sales tactics**
+- **No clear process**
+- **Unable to explain technical decisions**
+- **Bad reviews or no online presence**
+
+## Green Flags to Look For
+
+Prioritize companies that:
+
+- **Have relevant portfolio work**
+- **Provide detailed proposals**
+- **Explain their process clearly**
+- **Are responsive and professional**
+- **Ask questions about YOUR business**
+- **Have positive, verifiable reviews**
+- **Discuss strategy, not just design**
+- **Are transparent about pricing**
+- **Have clear contracts**
+- **Seem genuinely interested in your success**
+
+## The Right Fit Matters More Than Price
+
+The cheapest option isn't the best value. Neither is the most expensive. Look for:
+
+- **Alignment:** Do they understand your business?
+- **Communication:** Can you work with these people?
+- **Capability:** Can they deliver what you need?
+- **Value:** Does the price reflect the value delivered?
+
+## Our Commitment
+
+At WebsitesForMorons.com, we welcome every question on this list. We believe transparency builds trust, and trust builds great websites.
+
+- Portfolio: Check
+- References: Happy to provide
+- Clear process: Documented
+- Fair pricing: In writing
+- You own everything: Guaranteed
+
+---
+
+*Ready to find out if we're the right fit? [Get a free consultation](/contact) with no pressure and honest answers to all your questions.*
+    `,
+  },
+
+  // ============================================================================
+  // Post 9: Small Business Website Design (HIGH VOLUME KEYWORD)
+  // ============================================================================
+  {
+    slug: 'small-business-website-design-guide',
+    title: 'Small Business Website Design: The Complete 2025 Guide',
+    excerpt: 'Everything small business owners need to know about getting a website that actually generates leads and customers.',
+    category: 'Web Design',
+    tags: ['small business website', 'website design', 'business website', 'lead generation'],
+    date: '2025-11-18',
+    readTime: '14 min read',
+    author: {
+      name: 'Sarah Miller',
+      role: 'Creative Director',
+    },
+    metaDescription: 'Complete guide to small business website design in 2025. Learn what makes websites convert, how much to budget, and how to choose the right approach for your business.',
+    content: `
+## Why Your Small Business Needs a Great Website
+
+Let's start with some numbers that might surprise you:
+
+- **97%** of consumers search online for local businesses
+- **75%** of users judge a company's credibility based on website design
+- **88%** of online consumers won't return after a bad website experience
+- **70%** of small business websites lack a call-to-action
+
+Your website isn't a digital brochure—it's your hardest-working employee. It works 24/7, never takes breaks, and can talk to thousands of potential customers simultaneously.
+
+## What Makes a Small Business Website Effective?
+
+### 1. Clear Value Proposition
+
+Within 5 seconds, visitors should understand:
+- What you do
+- Who you serve
+- Why you're different
+- What they should do next
+
+**Bad Example:** "Welcome to ABC Company. We leverage synergies to optimize business outcomes through innovative solutions."
+
+**Good Example:** "Minneapolis Plumber | Same-Day Emergency Service | Licensed & Insured Since 1995"
+
+### 2. Mobile-First Design
+
+Over 60% of searches happen on mobile. Your site must:
+- Load fast on cellular connections
+- Be easy to navigate with thumbs
+- Have click-to-call buttons
+- Display critical info without scrolling
+
+### 3. Fast Loading Speed
+
+Every second of load time:
+- Reduces conversions by 7%
+- Increases bounce rate by 11%
+- Frustrates potential customers
+
+Target: Under 3 seconds on mobile.
+
+### 4. Clear Navigation
+
+Users should find any information within 3 clicks. Essential pages:
+- Home
+- Services/Products
+- About
+- Contact
+- Testimonials/Reviews
+
+### 5. Trust Signals
+
+Build credibility with:
+- Customer testimonials
+- Reviews from Google/Yelp
+- Industry certifications
+- Professional photography
+- Clear contact information
+- Physical address (if applicable)
+
+### 6. Strong Calls-to-Action
+
+Tell visitors what to do:
+- "Get a Free Quote"
+- "Schedule Consultation"
+- "Call Now"
+- "Download Free Guide"
+
+Place CTAs prominently on every page.
+
+### 7. Local SEO Foundation
+
+If you serve a local area:
+- Include city/region in key pages
+- Embed Google Map
+- Consistent NAP (Name, Address, Phone)
+- Local business schema markup
+- Google Business Profile optimization
+
+## Essential Pages for Small Business Websites
+
+### Homepage
+
+**Purpose:** Create strong first impression, direct visitors to key pages
+
+**Must Include:**
+- Clear headline stating what you do
+- Brief value proposition
+- Primary services/products overview
+- Trust signals (reviews, certifications)
+- Strong call-to-action
+- Navigation to other pages
+
+### Services/Products Pages
+
+**Purpose:** Detail what you offer, convert interested visitors
+
+**Must Include:**
+- Clear service/product descriptions
+- Benefits (not just features)
+- Pricing or price ranges (if possible)
+- Process explanation
+- FAQ section
+- Testimonials specific to service
+- CTA to contact/buy
+
+### About Page
+
+**Purpose:** Build trust and human connection
+
+**Must Include:**
+- Your story (brief, authentic)
+- Team photos and bios
+- Company values
+- Years in business
+- Credentials and certifications
+- What makes you different
+
+### Contact Page
+
+**Purpose:** Make it easy to reach you
+
+**Must Include:**
+- Contact form (keep it simple)
+- Phone number (click-to-call)
+- Email address
+- Physical address (if applicable)
+- Business hours
+- Google Map embed
+- Response time expectation
+
+### Testimonials/Reviews Page
+
+**Purpose:** Social proof that builds trust
+
+**Must Include:**
+- Customer testimonials with names
+- Star ratings
+- Links to Google/Yelp reviews
+- Case studies (if applicable)
+- Video testimonials (if available)
+
+## DIY vs. Professional: Which Is Right for You?
+
+### Choose DIY (Wix, Squarespace) If:
+
+- Budget under $1,000
+- Very simple needs (under 5 pages)
+- You're tech-comfortable
+- You have time to invest
+- Design quality isn't critical
+
+### Choose Professional If:
+
+- Website is primary lead source
+- You need custom functionality
+- You're in a competitive market
+- You value your time
+- Design quality matters
+- You need ongoing support
+
+### The Middle Ground
+
+Consider semi-custom options:
+- Professional template setup: $1,000-2,500
+- Template with customization: $2,500-5,000
+- Fully custom design: $5,000+
+
+## Budgeting for Your Website
+
+### Initial Investment
+
+| Option | Cost Range | Best For |
+|--------|------------|----------|
+| DIY Builder | $200-500 | Hobby, testing |
+| Template Setup | $1,000-2,500 | Budget-conscious |
+| Professional Design | $2,500-10,000 | Most businesses |
+| Custom Development | $10,000+ | Complex needs |
+
+### Ongoing Costs
+
+- Hosting: $10-100/month
+- Domain: $15/year
+- SSL: Usually free
+- Maintenance: $50-200/month
+- Updates: As needed
+
+### ROI Perspective
+
+A $5,000 website that generates 10 leads/month at $500/lead = $5,000/month revenue potential.
+
+Payback period: 1 month.
+
+## Common Mistakes to Avoid
+
+### 1. No Clear Goal
+
+Every website needs a purpose. "We need a website" isn't a strategy.
+
+**Fix:** Define what success looks like. Leads? Sales? Appointments?
+
+### 2. Too Much Text
+
+No one reads walls of text.
+
+**Fix:** Scannable content, bullet points, clear headings.
+
+### 3. Hidden Contact Info
+
+Making visitors hunt for your phone number loses leads.
+
+**Fix:** Contact info in header and footer, every page.
+
+### 4. No Mobile Optimization
+
+Unreadable on phones = lost customers.
+
+**Fix:** Mobile-first design, test on actual devices.
+
+### 5. Slow Loading
+
+Every second costs you money.
+
+**Fix:** Optimize images, quality hosting, minimal plugins.
+
+### 6. Outdated Design
+
+Old design = old business perception.
+
+**Fix:** Refresh every 3-5 years minimum.
+
+### 7. No Analytics
+
+Can't improve what you don't measure.
+
+**Fix:** Install Google Analytics, check it monthly.
+
+## Getting Started: Your Action Plan
+
+### Week 1: Planning
+- Define website goals
+- Identify target audience
+- List required pages
+- Gather content (text, images)
+- Set budget
+
+### Week 2: Research
+- Check competitor websites
+- Identify features you need
+- Get 3-5 quotes
+- Review portfolios
+
+### Week 3: Selection
+- Compare proposals
+- Check references
+- Sign contract
+- Pay deposit
+
+### Week 4+: Development
+- Provide feedback on designs
+- Review and approve
+- Test thoroughly
+- Launch!
+
+## The Bottom Line
+
+Your website is often the first—and sometimes only—chance to make an impression on potential customers. Investing in a professional, effective website isn't an expense; it's the foundation of your digital marketing.
+
+The businesses that thrive in 2025 will be those that treat their website as their most valuable marketing asset.
+
+---
+
+*Ready to get a website that actually works for your business? [Get a free consultation](/contact) and see what's possible.*
+    `,
+  },
+
+  // ============================================================================
+  // Post 10: Website Redesign Services (HIGH INTENT)
+  // ============================================================================
+  {
+    slug: 'website-redesign-services',
+    title: 'Website Redesign Services: When, Why, and How to Update Your Site',
+    excerpt: 'Is your website stuck in 2019? Learn when it\'s time for a redesign and how to do it right without losing your SEO.',
+    category: 'Web Design',
+    tags: ['website redesign', 'website update', 'website refresh', 'web design services'],
+    date: '2025-11-12',
+    readTime: '11 min read',
+    author: {
+      name: 'Emily Davis',
+      role: 'Project Manager',
+    },
+    metaDescription: 'Everything you need to know about website redesign services. Learn when to redesign, how to preserve SEO, and what to expect from the process.',
+    content: `
+## When Does Your Website Need a Redesign?
+
+Websites aren't wine—they don't get better with age. While there's no universal expiration date, most websites need significant updates every 3-5 years and a full redesign every 5-7 years.
+
+But age isn't the only factor. Here's how to know if it's time.
+
+## Signs You Need a Website Redesign
+
+### Performance Indicators
+
+**Check Your Analytics:**
+- Bounce rate above 60%
+- Declining organic traffic
+- Low conversion rate (under 2%)
+- High exit rate on key pages
+- Poor mobile metrics
+
+If your numbers are trending wrong, your website might be the problem.
+
+### User Experience Issues
+
+- Site takes more than 3 seconds to load
+- Not mobile-responsive
+- Confusing navigation
+- Outdated design elements
+- Broken functionality
+- Users complain
+
+### Business Changes
+
+- Your brand has evolved
+- New products or services
+- Different target audience
+- Changed business model
+- Expanded service area
+- Merger or acquisition
+
+### Technical Problems
+
+- Security vulnerabilities
+- CMS is outdated/unsupported
+- Plugins causing conflicts
+- Can't update content easily
+- Not HTTPS secure
+- Poor SEO foundation
+
+### Competitive Pressure
+
+- Competitors have better sites
+- Industry standards have changed
+- You're embarrassed to share your URL
+- It doesn't reflect your quality
+
+## The Redesign Process: What to Expect
+
+### Phase 1: Discovery (1-2 weeks)
+
+- Current site audit
+- Analytics review
+- Competitor analysis
+- Goal definition
+
+### Phase 2: Strategy & Planning (1-2 weeks)
+
+- Information architecture
+- Content strategy
+- SEO preservation plan
+- Technical requirements
+
+### Phase 3: Design (2-4 weeks)
+
+- Wireframes
+- Visual design concepts
+- Mobile layouts
+- Design iterations
+
+### Phase 4: Development (3-6 weeks)
+
+- Build on chosen platform
+- Content migration
+- Integration setup
+- Performance optimization
+
+### Phase 5: Testing & Launch (1-2 weeks)
+
+- Cross-browser testing
+- 301 redirect implementation
+- Launch execution
+- Post-launch monitoring
+
+## Protecting Your SEO During a Redesign
+
+A redesign can destroy your search rankings if done wrong. Key protections:
+
+1. **Document current performance** before starting
+2. **Preserve URL structure** where possible
+3. **Implement 301 redirects** for any URL changes
+4. **Maintain on-page SEO** (titles, meta descriptions, headings)
+5. **Monitor closely** after launch
+
+## Our Transparent Pricing
+
+- **Professional Redesign:** Starting at $2,499
+- **E-commerce Redesign:** Starting at $4,999
+- **Custom Development:** Starting at $7,499
+
+---
+
+*Considering a redesign? [Get a free website audit](/contact) to see exactly what your site needs.*
+    `,
+  },
+
+  // ============================================================================
+  // Post 11: E-commerce Website Design (HIGH VALUE KEYWORD)
+  // ============================================================================
+  {
+    slug: 'ecommerce-website-design-guide',
+    title: 'E-commerce Website Design: Complete Guide to Building an Online Store',
+    excerpt: 'Learn how to create an e-commerce website that actually sells. From platform selection to conversion optimization.',
+    category: 'E-commerce',
+    tags: ['ecommerce website', 'online store', 'shopify', 'woocommerce', 'ecommerce design'],
+    date: '2025-11-01',
+    readTime: '16 min read',
+    author: {
+      name: 'Mike Johnson',
+      role: 'Lead Developer',
+    },
+    metaDescription: 'Complete guide to e-commerce website design. Learn platform selection, essential features, and conversion optimization for your online store.',
+    content: `
+## Building an E-commerce Website That Sells
+
+E-commerce sales continue to grow, with online shopping now representing over 20% of all retail. But here's the reality: most e-commerce websites fail to meet their potential.
+
+The difference between struggling stores and successful ones isn't luck—it's strategy, design, and execution.
+
+## Choosing Your E-commerce Platform
+
+### Shopify
+**Best For:** Most new e-commerce businesses
+- Easiest to set up
+- Reliable hosting included
+- Huge app ecosystem
+- **Cost:** $39-399/month
+
+### WooCommerce (WordPress)
+**Best For:** Content-heavy stores, maximum flexibility
+- Free core software
+- Unlimited customization
+- Full SEO control
+- **Cost:** Hosting + plugins ($50-300/month)
+
+### BigCommerce
+**Best For:** Growing businesses with complex needs
+- No transaction fees
+- Strong built-in features
+- Good for B2B
+- **Cost:** $39-399/month
+
+## Essential E-commerce Features
+
+### Product Pages Must Have:
+- High-quality images (multiple angles)
+- Clear pricing
+- Shipping information
+- Reviews and ratings
+- Easy add-to-cart
+
+### Checkout Must Have:
+- Guest checkout option
+- Multiple payment options
+- Progress indicator
+- Security badges
+- Mobile optimization
+
+## E-commerce SEO Essentials
+
+- Unique product descriptions
+- Optimized title tags
+- Schema markup for products
+- Fast page speed
+- Mobile-first design
+- XML sitemap
+
+## Investment Expectations
+
+| Setup Level | Cost Range |
+|-------------|------------|
+| Basic Shopify | $3,000-8,000 |
+| Custom WooCommerce | $5,000-15,000 |
+| Enterprise Solution | $20,000-100,000+ |
+
+---
+
+*Ready to launch your online store? [Contact us](/contact) for expert e-commerce design.*
     `,
   },
 ];
