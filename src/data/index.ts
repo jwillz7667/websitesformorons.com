@@ -4,3 +4,4 @@ export { testimonialsData, featuredTestimonials } from './testimonials';
 export { faqData, faqCategories } from './faq';
 export { pricingPlans, maintenancePlans } from './pricing';
 export { processSteps } from './process';
+export { projectsData, projectCategories, featuredProjects, portfolioStats } from './projects';

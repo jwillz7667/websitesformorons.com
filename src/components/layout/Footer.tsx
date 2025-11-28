@@ -208,8 +208,8 @@ export function Footer() {
                 <div className="flex items-start gap-2 text-white/60 text-sm">
                   <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
                   <span>
-                    123 Design Street<br />
-                    San Francisco, CA 94102
+                    900 Nicollet Mall<br />
+                    Minneapolis, MN 55403
                   </span>
                 </div>
               </li>
@@ -222,7 +222,7 @@ export function Footer() {
           <div className="flex items-center gap-1 text-sm text-white/40">
             <span>&copy; {currentYear} WebsitesForMorons.com. Made with</span>
             <Heart className="w-4 h-4 text-red-500 fill-red-500" />
-            <span>in San Francisco</span>
+            <span>in Minneapolis</span>
           </div>
 
           <div className="flex flex-wrap items-center gap-6">

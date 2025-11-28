@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const teamMembers = [
   {
-    name: 'Alex Chen',
+    name: 'Justin Williams',
     role: 'Founder & CEO',
     bio: '20+ years in web design. Former agency owner. Passionate about helping small businesses succeed online.',
     socials: { linkedin: '#', twitter: '#' },
@@ -136,12 +136,12 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-white mb-6">Our Story</h2>
               <div className="space-y-4 text-white/60">
                 <p>
-                  It all started in 2004 when our founder, Alex, was helping his
+                  It all started in 2004 when our founder, Justin Williams, was helping his
                   uncle's plumbing business get online. The "web designer" they'd
                   hired delivered something that looked like it was built in 1995.
                 </p>
                 <p>
-                  Alex thought, "There has to be a better way." He spent the next
+                  Justin thought, "There has to be a better way." He spent the next
                   month rebuilding the site himself. The result? His uncle's calls
                   tripled. That's when WebsitesForMorons was born.
                 </p>

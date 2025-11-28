@@ -27,10 +27,10 @@ export const jsonLd = {
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '123 Design Street',
-      addressLocality: 'San Francisco',
-      addressRegion: 'CA',
-      postalCode: '94102',
+      streetAddress: '900 Nicollet Mall',
+      addressLocality: 'Minneapolis',
+      addressRegion: 'MN',
+      postalCode: '55403',
       addressCountry: 'US',
     },
     contactPoint: [
@@ -83,16 +83,16 @@ export const jsonLd = {
     url: siteUrl,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '123 Design Street',
-      addressLocality: 'San Francisco',
-      addressRegion: 'CA',
-      postalCode: '94102',
+      streetAddress: '900 Nicollet Mall',
+      addressLocality: 'Minneapolis',
+      addressRegion: 'MN',
+      postalCode: '55403',
       addressCountry: 'US',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 37.7749,
-      longitude: -122.4194,
+      latitude: 44.9778,
+      longitude: -93.2650,
     },
     openingHoursSpecification: [
       {

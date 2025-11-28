@@ -37,8 +37,8 @@ const contactMethods = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    value: 'San Francisco, CA',
-    href: '#',
+    value: '900 Nicollet Mall, Minneapolis, MN 55403',
+    href: 'https://maps.google.com/?q=900+Nicollet+Mall+Minneapolis+MN+55403',
     description: 'By appointment only',
   },
 ];

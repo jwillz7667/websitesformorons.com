@@ -1,4 +1,4 @@
-import { Hero, Stats, Services, Process, Pricing, Testimonials, CTA } from '@/components/sections';
+import { Hero, Stats, Services, BeforeAfter, Process, Pricing, Testimonials, CTA } from '@/components/sections';
 import { jsonLd } from '@/lib/structured-data';
 
 export default function HomePage() {
@@ -18,6 +18,7 @@ export default function HomePage() {
       <Hero />
       <Stats />
       <Services />
+      <BeforeAfter />
       <Process />
       <Pricing />
       <Testimonials />
