@@ -5,7 +5,6 @@ import {
   ArrowRight,
   CheckCircle2,
   Quote,
-  ExternalLink,
   Zap,
   Users,
   Award,
@@ -138,24 +137,9 @@ export default function PortfolioPage() {
                       `bg-gradient-to-br ${project.gradient}`
                     )} />
 
-                    {/* Browser mockup */}
+                    {/* Project Image - No Browser Chrome */}
                     <Card variant="glass" padding="none" className="relative overflow-hidden">
-                      {/* Browser chrome */}
-                      <div className="flex items-center gap-2 px-4 py-3 bg-neutral-800/80 border-b border-white/5">
-                        <div className="flex gap-2">
-                          <div className="w-3 h-3 rounded-full bg-red-500" />
-                          <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                          <div className="w-3 h-3 rounded-full bg-green-500" />
-                        </div>
-                        <div className="flex-1 mx-4">
-                          <div className="bg-neutral-700/50 rounded-lg px-4 py-1.5 text-xs text-white/40 text-center truncate">
-                            {project.url?.replace('https://', '') || `${project.id}.example.com`}
-                          </div>
-                        </div>
-                        <ExternalLink className="w-4 h-4 text-white/30" />
-                      </div>
-
-                      {/* Project preview - SVG Website Mockup */}
+                      {/* Project preview */}
                       <div className="aspect-[16/10] relative overflow-hidden bg-neutral-950">
                         <ProjectMockup
                           projectId={project.id}
