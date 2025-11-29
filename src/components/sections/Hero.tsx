@@ -3,13 +3,111 @@
 import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Play, CheckCircle2, Star, TrendingUp, Zap } from 'lucide-react';
+import { ArrowRight, Play, CheckCircle2, Star, Smartphone, CheckCircle, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { GradientText } from '@/components/ui/GradientText';
 import { usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 import { quickStats } from '@/data/stats';
+
+// Modern website mockup
+function ModernWebsite() {
+  return (
+    <div className="w-full h-full bg-black rounded-lg overflow-hidden shadow-2xl border border-white/10">
+      {/* Browser chrome */}
+      <div className="bg-neutral-900 px-3 py-2 flex items-center gap-2 border-b border-white/10">
+        <div className="flex gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
+        </div>
+        <div className="flex-1 bg-neutral-950 rounded px-2 py-0.5 text-[8px] text-gray-400 ml-2 flex items-center gap-1">
+          <div className="w-2 h-2 text-green-500">🔒</div>
+          newwebsite.com
+        </div>
+      </div>
+
+      {/* Webpage content */}
+      <div className="bg-gradient-to-br from-neutral-950 via-neutral-900 to-black">
+        {/* Modern header */}
+        <div className="backdrop-blur-xl bg-neutral-950/80 border-b border-white/5 px-4 py-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                <div className="text-white text-[10px] font-bold">A</div>
+              </div>
+              <span className="text-white text-xs font-semibold">Acme</span>
+            </div>
+            <div className="hidden sm:flex items-center gap-3 text-[9px]">
+              <span className="text-white/70 hover:text-white transition-colors cursor-pointer">Services</span>
+              <span className="text-white/70 hover:text-white transition-colors cursor-pointer">Portfolio</span>
+              <span className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-3 py-1 rounded-md font-medium cursor-pointer">Contact</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Hero section */}
+        <div className="px-4 pt-6 pb-8 relative">
+          {/* Gradient orb */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl"></div>
+
+          <div className="relative text-center mb-6">
+            <div className="inline-flex items-center gap-1.5 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-3 py-1 mb-3">
+              <Star className="w-2.5 h-2.5 text-cyan-400 fill-cyan-400" />
+              <span className="text-cyan-400 text-[8px] font-medium">Industry Leading</span>
+            </div>
+            <h1 className="text-white text-lg sm:text-xl font-bold mb-2 leading-tight">
+              Transform Your Business
+            </h1>
+            <p className="text-white/60 text-[10px] sm:text-xs max-w-md mx-auto leading-relaxed">
+              Cutting-edge solutions designed to accelerate growth and maximize ROI
+            </p>
+            <div className="flex items-center justify-center gap-2 mt-4">
+              <button className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white text-[9px] sm:text-[10px] font-semibold px-4 py-2 rounded-lg transition-all shadow-lg shadow-cyan-500/25">
+                Get Started
+              </button>
+              <button className="border border-white/20 hover:bg-white/5 text-white text-[9px] sm:text-[10px] font-medium px-4 py-2 rounded-lg transition-all backdrop-blur-sm">
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          {/* Feature cards */}
+          <div className="grid grid-cols-3 gap-2 mt-4">
+            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+              <div className="w-6 h-6 bg-gradient-to-br from-cyan-500/20 to-cyan-600/20 rounded-lg flex items-center justify-center mb-1.5 border border-cyan-500/20">
+                <Zap className="w-3 h-3 text-cyan-400" />
+              </div>
+              <div className="text-white text-[8px] sm:text-[9px] font-semibold mb-0.5">Fast</div>
+              <div className="text-white/40 text-[7px]">Lightning speed</div>
+            </div>
+            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+              <div className="w-6 h-6 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-lg flex items-center justify-center mb-1.5 border border-orange-500/20">
+                <CheckCircle className="w-3 h-3 text-orange-400" />
+              </div>
+              <div className="text-white text-[8px] sm:text-[9px] font-semibold mb-0.5">Secure</div>
+              <div className="text-white/40 text-[7px]">Bank-grade SSL</div>
+            </div>
+            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-lg p-2.5 border border-white/10">
+              <div className="w-6 h-6 bg-gradient-to-br from-cyan-500/20 to-cyan-600/20 rounded-lg flex items-center justify-center mb-1.5 border border-cyan-500/20">
+                <Smartphone className="w-3 h-3 text-cyan-400" />
+              </div>
+              <div className="text-white text-[8px] sm:text-[9px] font-semibold mb-0.5">Mobile</div>
+              <div className="text-white/40 text-[7px]">Fully responsive</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom success bar */}
+      <div className="bg-cyan-950/40 border-t border-cyan-500/20 px-3 py-1.5 flex items-center gap-3 text-cyan-400">
+        <CheckCircle className="w-3 h-3 flex-shrink-0" />
+        <div className="text-[8px] sm:text-[9px] flex-1">2.1s Load • Mobile First • SEO Optimized</div>
+      </div>
+    </div>
+  );
+}
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,7 +118,6 @@ export function Hero() {
     offset: ['start start', 'end start'],
   });
 
-  // More gradual parallax - only starts fading at 70% scroll, completes at 100%
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0.3]);
 
@@ -29,26 +126,23 @@ export function Hero() {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Background */}
-      <div className="absolute inset-0 dark:bg-neutral-950 bg-white">
-        {/* Grid pattern */}
-        <div className="absolute inset-0 grid-pattern dark:opacity-30 opacity-10" />
-
+      {/* Background - Dark gradient with orbs */}
+      <div className="absolute inset-0 bg-gradient-to-br from-neutral-950 via-neutral-900 to-black">
         {/* Gradient orbs */}
         <div
-          className="absolute w-[800px] h-[800px] rounded-full blur-[120px] dark:opacity-20 opacity-10 transition-all duration-1000 ease-out"
+          className="absolute w-[800px] h-[800px] rounded-full blur-[120px] opacity-20"
           style={{
-            background: 'radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, transparent 70%)',
-            left: '30%',
-            top: '30%',
+            background: 'radial-gradient(circle, rgba(6, 182, 212, 0.5) 0%, transparent 70%)',
+            left: '20%',
+            top: '20%',
           }}
         />
         <div
-          className="absolute w-[600px] h-[600px] rounded-full blur-[100px] opacity-15 transition-all duration-1000 ease-out delay-100"
+          className="absolute w-[600px] h-[600px] rounded-full blur-[100px] opacity-15"
           style={{
-            background: 'radial-gradient(circle, rgba(249, 115, 22, 0.4) 0%, transparent 70%)',
-            right: '30%',
-            bottom: '30%',
+            background: 'radial-gradient(circle, rgba(249, 115, 22, 0.5) 0%, transparent 70%)',
+            right: '20%',
+            bottom: '20%',
           }}
         />
 
@@ -60,13 +154,13 @@ export function Hero() {
         style={{ y, opacity }}
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32"
       >
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left order-2 lg:order-1"
           >
             {/* Badge */}
             <motion.div
@@ -82,18 +176,18 @@ export function Hero() {
             </motion.div>
 
             {/* Headline */}
-            <h1 className="text-display-lg sm:text-display-xl lg:text-display-2xl font-bold dark:text-white text-neutral-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Your Website is Losing You Money
               <br />
               <GradientText className="inline">We Can Fix It.</GradientText>
             </h1>
 
             {/* Description */}
-            <p className="text-lg sm:text-xl dark:text-white/60 text-neutral-600 mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="text-lg sm:text-xl text-white/70 mb-8 max-w-xl mx-auto lg:mx-0">
               Transform your embarrassing legacy website into a{' '}
-              <span className="dark:text-white text-neutral-900 font-bold">stunning, high-converting</span> digital
+              <span className="text-white font-semibold">stunning, high-converting</span> digital
               experience. Professional redesigns starting at{' '}
-              <span className="text-cyan-500 font-semibold">$2,499</span>.
+              <span className="text-cyan-400 font-bold">$2,499</span>.
             </p>
 
             {/* CTA Buttons */}
@@ -117,97 +211,54 @@ export function Hero() {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm dark:text-white/50 text-neutral-500">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-white/60">
               {[
                 'No Contracts',
                 '14-Day Delivery',
                 '100% Satisfaction',
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-500" />
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400" />
                   <span>{item}</span>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Stats/Results Visual */}
+          {/* Website Mockup */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
+            className="relative order-1 lg:order-2"
           >
-            <div
-              className={cn(
-                'relative transform-gpu',
-                !prefersReducedMotion && 'hover:scale-[1.02] transition-transform duration-500'
-              )}
-            >
+            <div className="relative">
               {/* Glow effect behind */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-transparent to-orange-500/20 rounded-3xl blur-2xl opacity-60" />
+              <div className="absolute -inset-8 bg-gradient-to-r from-cyan-500/20 via-transparent to-orange-500/20 rounded-3xl blur-3xl opacity-60" />
 
-              {/* Main visual card */}
-              <div className="relative dark:bg-neutral-900/80 bg-neutral-100/80 backdrop-blur-xl rounded-2xl border dark:border-white/10 border-neutral-200 overflow-hidden shadow-2xl dark:shadow-black/50 shadow-neutral-500/20 p-8">
-                {/* Results showcase */}
-                <div className="space-y-6">
-                  <div className="text-center mb-8">
-                    <div className="text-xs font-mono uppercase tracking-wider dark:text-cyan-400 text-cyan-600 mb-2">Average Client Results</div>
-                    <div className="text-4xl sm:text-5xl font-bold text-gradient">+287%</div>
-                    <div className="dark:text-white/60 text-neutral-600 text-sm mt-1">Conversion Rate Increase</div>
-                  </div>
-
-                  {/* Stats grid */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="dark:bg-white/5 bg-white/80 rounded-xl p-4 border dark:border-white/10 border-neutral-200">
-                      <TrendingUp className="w-6 h-6 text-cyan-500 mb-2" />
-                      <div className="text-2xl font-bold dark:text-white text-neutral-900">340%</div>
-                      <div className="text-xs dark:text-white/50 text-neutral-500">More Traffic</div>
-                    </div>
-                    <div className="dark:bg-white/5 bg-white/80 rounded-xl p-4 border dark:border-white/10 border-neutral-200">
-                      <Zap className="w-6 h-6 text-orange-500 mb-2" />
-                      <div className="text-2xl font-bold dark:text-white text-neutral-900">2.1s</div>
-                      <div className="text-xs dark:text-white/50 text-neutral-500">Load Time</div>
-                    </div>
-                  </div>
-
-                  {/* Testimonial snippet */}
-                  <div className="dark:bg-gradient-to-br dark:from-cyan-500/10 dark:to-orange-500/10 bg-gradient-to-br from-cyan-500/5 to-orange-500/5 rounded-xl p-4 border dark:border-white/10 border-neutral-200">
-                    <p className="text-sm dark:text-white/80 text-neutral-700 italic mb-2">
-                      "Our leads increased 4x in the first month after launch."
-                    </p>
-                    <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-cyan-500 to-orange-500" />
-                      <span className="text-xs dark:text-white/50 text-neutral-500">Sarah M., Healthcare CEO</span>
-                    </div>
-                  </div>
+              {/* Modern Website Display */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className={cn(
+                  'transform-gpu relative',
+                  !prefersReducedMotion && 'hover:scale-[1.02] transition-transform duration-500'
+                )}
+              >
+                <div className="aspect-[4/3] max-w-2xl mx-auto">
+                  <ModernWebsite />
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Floating elements */}
+              {/* Floating stat badge */}
               <motion.div
                 animate={!prefersReducedMotion ? { y: [0, -10, 0] } : {}}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-6 -right-6 bg-gradient-to-br from-cyan-500 to-cyan-400 rounded-2xl p-4 shadow-glow shadow-cyan-500/50"
+                className="absolute -top-4 -right-4 bg-gradient-to-br from-cyan-500 to-cyan-400 rounded-2xl p-4 shadow-2xl shadow-cyan-500/50 z-10"
               >
-                <div className="text-black font-bold text-2xl">+340%</div>
-                <div className="text-black/60 text-xs">Traffic Increase</div>
-              </motion.div>
-
-              <motion.div
-                animate={!prefersReducedMotion ? { y: [0, 10, 0] } : {}}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute -bottom-4 -left-4 dark:bg-neutral-900/90 bg-white/90 backdrop-blur-xl rounded-2xl p-4 border dark:border-white/10 border-neutral-200 shadow-xl"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center">
-                    <Star className="w-5 h-5 text-white fill-white" />
-                  </div>
-                  <div>
-                    <div className="dark:text-white text-neutral-900 font-bold">4.9/5 Rating</div>
-                    <div className="dark:text-white/50 text-neutral-500 text-xs">2,500+ Reviews</div>
-                  </div>
-                </div>
+                <div className="text-black font-bold text-2xl">+287%</div>
+                <div className="text-black/70 text-xs font-semibold">Conversions</div>
               </motion.div>
             </div>
           </motion.div>

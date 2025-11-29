@@ -104,40 +104,6 @@ export const projectsData: Project[] = [
   },
 
   // ============================================================================
-  // Professional Services / B2B
-  // ============================================================================
-  {
-    id: 'pinnacle-consulting-group',
-    name: 'Pinnacle Consulting Group',
-    category: 'B2B Services',
-    gradient: 'from-indigo-500 to-purple-700',
-    icon: '📊',
-    increase: '+315%',
-    description: 'Management consulting firm specializing in digital transformation and operational efficiency for mid-market companies.',
-    shortDescription: 'Lead generation engine for an enterprise consulting firm.',
-    challenge: 'Pinnacle had impressive Fortune 500 client logos but a website that undersold their expertise. Their case studies were buried in PDFs, their service offerings were confusing, and they had no way to capture leads beyond a generic contact form that got spammed constantly.',
-    solution: 'We developed a thought leadership platform with gated case studies, an interactive ROI calculator, and a sophisticated lead scoring system integrated with their CRM. The design positions them as enterprise-ready while the UX makes complex service offerings digestible.',
-    results: [
-      '315% increase in marketing-qualified leads',
-      'Lead-to-opportunity conversion improved from 12% to 34%',
-      'Average deal size of web leads: $180,000 vs $95,000 from referrals',
-      'ROI calculator generated 890 leads in first quarter',
-      'Case study downloads increased 780%',
-      'LinkedIn traffic from thought leadership up 425%',
-    ],
-    technologies: ['Next.js', 'HubSpot CRM', 'Segment Analytics', 'Clearbit Enrichment', 'Contentful CMS', 'Calendly Enterprise'],
-    testimonial: {
-      text: 'The new website positions us where we belong—competing for $500K+ engagements instead of small projects. The leads we\'re getting now are CMOs and COOs of companies we actually want to work with. That ROI calculator alone has been worth the entire investment.',
-      author: 'Jennifer Walsh',
-      role: 'Managing Director, Pinnacle Consulting Group',
-    },
-    screenshots: ['/portfolio/pinnacle-hero.jpg', '/portfolio/pinnacle-casestudies.jpg', '/portfolio/pinnacle-calculator.jpg'],
-    beforeImage: '/portfolio/pinnacle-before.jpg',
-    afterImage: '/portfolio/pinnacle-after.jpg',
-    url: 'https://pinnacleconsulting.example.com',
-  },
-
-  // ============================================================================
   // Home Services
   // ============================================================================
   {

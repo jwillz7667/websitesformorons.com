@@ -1,7 +1,6 @@
 'use client';
 
-import { WebsiteMockup } from '@/components/ui/WebsiteMockup';
-import { projectMockupConfigs } from '@/data/mockupConfigs';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 interface ProjectMockupProps {
@@ -12,6 +11,21 @@ interface ProjectMockupProps {
   icon: string;
 }
 
+// Map project IDs to actual hero images
+const projectImageMap: Record<string, string> = {
+  'coastal-dermatology-associates': '/portfolio/hero-images/Coastal.webp',
+  'morrison-blackwell-law': '/portfolio/hero-images/morris.webp',
+  'heritage-craft-coffee': '/portfolio/hero-images/heritage.webp',
+  'summit-hvac-solutions': '/portfolio/hero-images/summit.webp',
+  'terroir-wine-bar': '/portfolio/hero-images/terrier.webp',
+  'blackstone-realty-group': '/portfolio/hero-images/blackstone.webp',
+  'momentum-performance-lab': '/portfolio/hero-images/momentum.webp',
+  'catalyst-leadership-institute': '/portfolio/hero-images/catalyst.webp',
+  'precision-dynamics-manufacturing': '/portfolio/hero-images/precisiondynamics.webp',
+  'harbor-hope-foundation': '/portfolio/hero-images/harborhope.webp',
+  'clearview-analytics': '/portfolio/hero-images/clearviewanalytics.webp',
+};
+
 export function ProjectMockup({
   projectId,
   projectName,
@@ -19,22 +33,25 @@ export function ProjectMockup({
   gradient,
   icon,
 }: ProjectMockupProps) {
-  const config = projectMockupConfigs[projectId];
+  const imagePath = projectImageMap[projectId];
 
-  if (config) {
+  // Use actual hero image if available
+  if (imagePath) {
     return (
-      <WebsiteMockup
-        industry={config.industry}
-        projectName={projectName}
-        increase={increase}
-        primaryColor={config.primaryColor}
-        secondaryColor={config.secondaryColor}
-        accentColor={config.accentColor}
-      />
+      <div className="w-full h-full relative overflow-hidden bg-neutral-950">
+        <Image
+          src={imagePath}
+          alt={`${projectName} website hero section`}
+          fill
+          className="object-cover object-top"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          priority={false}
+        />
+      </div>
     );
   }
 
-  // Fallback for projects without mockup config
+  // Fallback for projects without images
   return (
     <div className={cn(
       'w-full h-full flex items-center justify-center relative',
