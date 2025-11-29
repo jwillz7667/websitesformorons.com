@@ -83,16 +83,7 @@ export function Hero() {
 
             {/* Headline */}
             <h1 className="text-display-lg sm:text-display-xl lg:text-display-2xl font-bold dark:text-white text-neutral-900 mb-6">
-              Your Website is{' '}
-              <span className="relative">
-                <span className="relative z-10">Losing You Money</span>
-                <motion.span
-                  className="absolute bottom-2 left-0 right-0 h-4 bg-gradient-to-r from-cyan-500/30 to-orange-500/30 -rotate-1"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                />
-              </span>
+              Your Website is Losing You Money
               <br />
               <GradientText className="inline">We Can Fix It.</GradientText>
             </h1>

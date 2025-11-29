@@ -13,6 +13,7 @@ interface AnimatedCounterProps {
   decimals?: number;
   className?: string;
   separator?: boolean;
+  isActive?: boolean; // External control for when to start animation
 }
 
 export function AnimatedCounter({
@@ -25,15 +26,15 @@ export function AnimatedCounter({
   decimals = 0,
   className,
   separator = true,
+  isActive = true, // Default true for backward compatibility
 }: AnimatedCounterProps) {
-  const { displayValue, ref } = useAnimatedCounter({
+  const { displayValue } = useAnimatedCounter({
     start,
     end,
     duration,
     delay,
     decimals,
-    triggerOnce: true,
-    threshold: 0.5,
+    enabled: isActive, // Pass external control to hook
   });
 
   const formattedValue = separator
@@ -41,7 +42,7 @@ export function AnimatedCounter({
     : displayValue;
 
   return (
-    <span ref={ref} className={cn('tabular-nums', className)}>
+    <span className={cn('tabular-nums counter-smooth', className)}>
       {prefix}
       {formattedValue}
       {suffix}

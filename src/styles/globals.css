@@ -343,6 +343,25 @@
     will-change: transform;
   }
 
+  .transform-gpu {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
+
+  .animate-smooth {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Counter-specific smoothing */
+  .counter-smooth {
+    font-variant-numeric: tabular-nums;
+    will-change: contents;
+    transform: translateZ(0);
+  }
+
   /* Line clamp utilities */
   .line-clamp-1 {
     display: -webkit-box;

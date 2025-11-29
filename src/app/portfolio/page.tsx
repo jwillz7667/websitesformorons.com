@@ -16,6 +16,7 @@ import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { GradientText } from '@/components/ui/GradientText';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { ProjectMockup } from '@/components/portfolio/ProjectMockup';
 import { CTA } from '@/components/sections/CTA';
 import { projectsData, portfolioStats, projectCategories } from '@/data/projects';
 import { cn } from '@/lib/utils';
@@ -154,28 +155,15 @@ export default function PortfolioPage() {
                         <ExternalLink className="w-4 h-4 text-white/30" />
                       </div>
 
-                      {/* Project preview */}
-                      <div className={cn(
-                        'aspect-[16/10] flex items-center justify-center relative overflow-hidden',
-                        `bg-gradient-to-br ${project.gradient}`
-                      )}>
-                        {/* Icon */}
-                        <span className="text-8xl opacity-20 absolute">{project.icon}</span>
-
-                        {/* Stats overlay */}
-                        <div className="relative z-10 text-center">
-                          <div className="text-6xl font-bold text-white drop-shadow-lg mb-2">
-                            {project.increase}
-                          </div>
-                          <div className="text-lg text-white/80 font-medium">
-                            Performance Increase
-                          </div>
-                        </div>
-
-                        {/* Floating badge */}
-                        <div className="absolute top-4 right-4 bg-black/30 backdrop-blur-sm rounded-full px-3 py-1.5 text-xs font-medium text-white">
-                          {project.category}
-                        </div>
+                      {/* Project preview - SVG Website Mockup */}
+                      <div className="aspect-[16/10] relative overflow-hidden bg-neutral-950">
+                        <ProjectMockup
+                          projectId={project.id}
+                          projectName={project.name}
+                          increase={project.increase}
+                          gradient={project.gradient}
+                          icon={project.icon}
+                        />
                       </div>
                     </Card>
                   </div>

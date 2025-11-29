@@ -6,7 +6,7 @@ import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { statsData } from '@/data/stats';
 
 export function Stats() {
-  const [ref, { isIntersecting }] = useIntersectionObserver<HTMLDivElement>({
+  const [ref, { hasIntersected }] = useIntersectionObserver<HTMLDivElement>({
     threshold: 0.2,
     triggerOnce: true,
   });
@@ -22,9 +22,13 @@ export function Stats() {
             <motion.div
               key={stat.id}
               initial={{ opacity: 0, y: 30 }}
-              animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center group"
+              animate={hasIntersected ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: [0.4, 0, 0.2, 1] // Smooth ease-out
+              }}
+              className="text-center group transform-gpu"
             >
               {/* Icon */}
               {stat.icon && (
@@ -33,7 +37,7 @@ export function Stats() {
                 </div>
               )}
 
-              {/* Value */}
+              {/* Value - using single intersection observer from parent */}
               <div className="text-3xl sm:text-4xl font-bold dark:text-white text-neutral-900 mb-2">
                 {stat.prefix}
                 <AnimatedCounter
@@ -41,6 +45,7 @@ export function Stats() {
                   duration={2000}
                   delay={index * 100}
                   decimals={stat.value % 1 !== 0 ? 1 : 0}
+                  isActive={hasIntersected} // Pass parent's intersection state
                 />
                 {stat.suffix}
               </div>
