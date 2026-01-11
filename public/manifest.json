@@ -1,16 +1,46 @@
 {
-  "name": "WebsitesForMorons.com",
+  "name": "WebsitesForMorons.com - Professional Web Design",
   "short_name": "W4M",
-  "description": "Professional web design for small businesses. We transform outdated websites into modern, high-converting digital experiences.",
-  "start_url": "/",
+  "description": "Transform your outdated website into a stunning, high-converting digital experience. Award-winning web design, SEO, and e-commerce solutions since 2004.",
+  "start_url": "/?source=pwa",
+  "id": "/",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui", "browser"],
   "background_color": "#0a0a0a",
   "theme_color": "#06b6d4",
-  "orientation": "portrait-primary",
-  "scope": "/",
+  "orientation": "any",
   "lang": "en-US",
-  "categories": ["business", "productivity", "web"],
+  "dir": "ltr",
+  "categories": ["business", "productivity", "web", "design", "marketing"],
+  "iarc_rating_id": "",
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": ["focus-existing", "auto"]
+  },
+  "handle_links": "preferred",
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
   "icons": [
+    {
+      "src": "/icons/icon-16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "/icons/icon-72.png",
       "sizes": "72x72",
@@ -48,6 +78,12 @@
       "purpose": "any"
     },
     {
+      "src": "/icons/icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/icons/icon-384.png",
       "sizes": "384x384",
       "type": "image/png",
@@ -56,6 +92,12 @@
     {
       "src": "/icons/icon-512.png",
       "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-1024.png",
+      "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "any"
     },
@@ -70,6 +112,18 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-monochrome-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "monochrome"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ],
   "screenshots": [
@@ -78,39 +132,108 @@
       "sizes": "1920x1080",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Home page on desktop"
+      "label": "Homepage - Transform your website today"
+    },
+    {
+      "src": "/screenshots/desktop-services.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Our professional web design services"
+    },
+    {
+      "src": "/screenshots/desktop-portfolio.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Portfolio of successful website transformations"
     },
     {
       "src": "/screenshots/mobile-home.png",
       "sizes": "750x1334",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Home page on mobile"
+      "label": "Homepage on mobile"
+    },
+    {
+      "src": "/screenshots/mobile-services.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Services on mobile"
+    },
+    {
+      "src": "/screenshots/mobile-contact.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Contact us on mobile"
     }
   ],
   "shortcuts": [
     {
-      "name": "Get a Quote",
+      "name": "Get a Free Quote",
       "short_name": "Quote",
-      "description": "Request a free website quote",
-      "url": "/contact?ref=shortcut",
-      "icons": [{ "src": "/icons/shortcut-quote.png", "sizes": "96x96" }]
+      "description": "Request a free website consultation and quote",
+      "url": "/contact?ref=shortcut&action=quote",
+      "icons": [
+        { "src": "/icons/shortcut-quote.png", "sizes": "96x96", "type": "image/png" }
+      ]
     },
     {
       "name": "View Portfolio",
       "short_name": "Portfolio",
-      "description": "See our latest work",
+      "description": "Browse our latest website transformations",
       "url": "/portfolio?ref=shortcut",
-      "icons": [{ "src": "/icons/shortcut-portfolio.png", "sizes": "96x96" }]
+      "icons": [
+        { "src": "/icons/shortcut-portfolio.png", "sizes": "96x96", "type": "image/png" }
+      ]
     },
     {
-      "name": "Pricing",
+      "name": "Our Services",
+      "short_name": "Services",
+      "description": "Explore our web design and development services",
+      "url": "/services?ref=shortcut",
+      "icons": [
+        { "src": "/icons/shortcut-services.png", "sizes": "96x96", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Pricing Plans",
       "short_name": "Pricing",
-      "description": "View our pricing packages",
+      "description": "View our transparent pricing packages",
       "url": "/services#pricing?ref=shortcut",
-      "icons": [{ "src": "/icons/shortcut-pricing.png", "sizes": "96x96" }]
+      "icons": [
+        { "src": "/icons/shortcut-pricing.png", "sizes": "96x96", "type": "image/png" }
+      ]
     }
   ],
-  "related_applications": [],
-  "prefer_related_applications": false
+  "share_target": {
+    "action": "/contact",
+    "method": "GET",
+    "params": {
+      "title": "subject",
+      "text": "message",
+      "url": "url"
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+websitesformorons",
+      "url": "/?protocol=%s"
+    }
+  ],
+  "file_handlers": [],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://websitesformorons.com/manifest.json"
+    }
+  ],
+  "serviceworker": {
+    "src": "/sw.js",
+    "scope": "/",
+    "type": "classic",
+    "update_via_cache": "none"
+  }
 }

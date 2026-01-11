@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 /* ============================================================================
-   CSS Custom Properties
+   CSS Custom Properties - 2026 Design System
    ============================================================================ */
 :root {
+  /* Brand Colors */
   --color-primary: #06b6d4;
   --color-primary-light: #22d3ee;
   --color-primary-dark: #0891b2;
@@ -13,73 +14,240 @@
   --color-accent-light: #fb923c;
   --color-accent-dark: #ea580c;
 
+  /* Semantic Colors */
+  --color-background: #0a0a0a;
+  --color-foreground: #ffffff;
+  --color-muted: #a3a3a3;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Gradients */
   --gradient-primary: linear-gradient(135deg, #06b6d4 0%, #22d3ee 50%, #f97316 100%);
   --gradient-glow: radial-gradient(circle at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+  --gradient-radial: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+  --gradient-conic: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops));
 
+  /* Easing Functions - Apple-style animations */
   --easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   --easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --easing-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --easing-apple: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --easing-ios: cubic-bezier(0.23, 1, 0.32, 1);
 
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), Consolas, monospace;
+  /* Typography - SF Pro system font stack (instant loading, OS-native feel) */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  /* Spacing Scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-glow-cyan: 0 0 40px -10px rgba(6, 182, 212, 0.5);
+  --shadow-glow-orange: 0 0 40px -10px rgba(249, 115, 22, 0.5);
+
+  /* Z-index Scale */
+  --z-dropdown: 50;
+  --z-sticky: 60;
+  --z-fixed: 70;
+  --z-modal-backdrop: 80;
+  --z-modal: 90;
+  --z-popover: 95;
+  --z-tooltip: 100;
+
+  /* Transitions */
+  --transition-fast: 150ms var(--easing-apple);
+  --transition-base: 200ms var(--easing-apple);
+  --transition-slow: 300ms var(--easing-apple);
+  --transition-slower: 500ms var(--easing-apple);
+
+  /* Container widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
 }
 
 /* ============================================================================
-   Base Styles
+   Base Styles - 2026 Optimized
    ============================================================================ */
 @layer base {
-  * {
+  *,
+  *::before,
+  *::after {
     @apply border-white/10;
+    box-sizing: border-box;
   }
 
   html {
-    @apply scroll-smooth antialiased;
+    @apply scroll-smooth;
+    /* Advanced font rendering for SF Pro aesthetic */
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    font-variant-ligatures: common-ligatures;
+    /* Prevent font size adjustment on iOS */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Smooth scrolling behavior */
+    scroll-behavior: smooth;
+    /* Content-visibility for better performance */
+    content-visibility: auto;
+    /* Color scheme support */
+    color-scheme: dark;
   }
 
-  html.lenis {
+  html.lenis,
+  html.lenis-smooth {
     height: auto;
-  }
-
-  .lenis.lenis-smooth {
     scroll-behavior: auto;
   }
 
   body {
-    @apply bg-neutral-950 text-white font-sans;
+    @apply bg-neutral-950 text-white font-sans antialiased;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
     overflow-x: hidden;
+    /* Optimize for readability */
+    text-rendering: optimizeSpeed;
+    /* Prevent layout shifts */
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* Better touch scrolling on mobile */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent text inflation on mobile */
+    -webkit-text-size-adjust: 100%;
+    /* Enable subpixel antialiasing */
+    font-smooth: always;
   }
 
-  /* Selection styling */
+  /* Selection styling - brand colors */
   ::selection {
     @apply bg-cyan-500 text-black;
+    text-shadow: none;
   }
 
   ::-moz-selection {
     @apply bg-cyan-500 text-black;
+    text-shadow: none;
   }
 
-  /* Focus visible styles */
+  /* Enhanced focus visible styles - WCAG 2.1 AA compliant */
   *:focus-visible {
     @apply outline-2 outline-offset-2 outline-cyan-500;
+    outline-style: solid;
   }
 
-  /* Headings */
+  /* Remove focus outline on mouse click, keep for keyboard */
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Headings - SF Pro inspired typography */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold tracking-tight;
+    @apply font-display font-semibold tracking-tight;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 
-  /* Links */
+  h1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl lg:text-5xl;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-3xl;
+    letter-spacing: -0.015em;
+  }
+
+  h4 {
+    @apply text-xl sm:text-2xl;
+    letter-spacing: -0.01em;
+  }
+
+  h5 {
+    @apply text-lg sm:text-xl;
+  }
+
+  h6 {
+    @apply text-base sm:text-lg;
+  }
+
+  /* Paragraphs */
+  p {
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+  }
+
+  /* Links - accessible and performant */
   a {
-    @apply transition-colors duration-300;
+    @apply transition-colors;
+    transition-duration: var(--transition-fast);
+    text-decoration-skip-ink: auto;
+    text-underline-offset: 0.2em;
   }
 
-  /* Images */
-  img {
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* Images - CLS prevention and optimization */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
     @apply max-w-full h-auto;
+    display: block;
+    vertical-align: middle;
+  }
+
+  /* Prevent CLS by reserving space */
+  img {
+    content-visibility: auto;
+  }
+
+  /* Improve media defaults */
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Better SVG defaults */
+  svg {
+    fill: currentColor;
   }
 
   /* Remove spinner from number inputs */
@@ -91,6 +259,129 @@
 
   input[type="number"] {
     -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  /* Improve form defaults */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* Button reset */
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  /* Disabled state */
+  button:disabled,
+  input:disabled,
+  select:disabled,
+  textarea:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  /* Remove list styles */
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Table improvements */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  /* Dialog/Modal improvements */
+  dialog {
+    @apply bg-neutral-900 text-white;
+  }
+
+  /* Details/Summary styling */
+  summary {
+    cursor: pointer;
+  }
+
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Horizontal rule */
+  hr {
+    @apply border-white/10;
+    border-style: solid;
+  }
+
+  /* Code blocks */
+  code,
+  kbd,
+  samp,
+  pre {
+    @apply font-mono;
+    font-size: 0.875em;
+  }
+
+  /* Abbreviations */
+  abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+    text-decoration-skip-ink: none;
+  }
+
+  /* Strong/Bold - enhanced weight */
+  strong,
+  b {
+    font-weight: 600;
+  }
+
+  /* Small text */
+  small {
+    font-size: 0.875em;
+  }
+
+  /* Subscript/Superscript */
+  sub,
+  sup {
+    font-size: 0.75em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  /* Hidden but accessible */
+  [hidden] {
+    display: none !important;
+  }
+
+  /* Screen reader only - WCAG compliant */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
   }
 }
 
